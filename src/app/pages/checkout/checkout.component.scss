@@ -1,0 +1,60 @@
+.body{
+    background-color: gainsboro;
+
+
+    .singin-or-singup-before-checkout{
+        padding: 30px 0px 0px 60px;
+        label{
+            margin: 5px 0px 0px 10px;
+            
+        }
+        .login-title,.invoice-type-title,.address-title{
+            background-color: blue;
+            color: white;
+            padding: 5px;
+        }
+        .login-form-container,.invoice-type-form,.addressForm{
+            background: white;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 30%;
+            margin-left: 20px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid 1px;
+            
+        }
+        input:hover{
+            width: 30%;
+            margin-left: 20px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid;
+            
+        }
+        button{
+            margin-top: 30px;
+            margin-left: 600px;
+        }
+        
+        h5{
+            padding: 10px 0px 10px 20px;
+        }
+    }
+
+
+
+    .payment-summery{
+        margin: 30px 0px 400px 0px;
+        
+        .payment-summery-title,.total-amount,.gst-plus-coupn,.amount-payable{
+            background-color: white;
+            margin-bottom: 1px;
+            padding: 10px;
+        }
+        
+    }
+}

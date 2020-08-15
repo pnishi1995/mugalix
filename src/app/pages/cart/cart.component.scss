@@ -1,0 +1,77 @@
+.body
+{
+
+    background: gainsboro;
+
+    .number-of-item-in-cart{
+        background-color: rgb(115, 115, 218);
+        color: white;
+        margin-top: 30px;
+        margin-left: 60px;
+        padding: 5px 0px;
+    }
+    .cart-details{
+        margin-left: 60px;
+        background-color: rgb(214, 211, 211);
+        margin:0px 0px 0px 60px;
+        padding: 10px 0px;
+    }
+    .itemdetail{
+        width: 55%;
+        
+        
+    }
+    .item-quantity, .item-amount{
+        width: 20%;
+        
+    }
+    .removeOrAdd{
+        border: solid black 1px;
+        padding: 5px;
+    }
+    .item-detail-summery{
+        margin-left: 60px;
+        background-color: white;
+        padding-top: 20px;
+        margin-right: 0px;
+        margin-bottom: 2px;
+        .item-pic{
+            margin-left: 10px;
+            border: solid blick 1px;
+            width: 100px;
+        }
+        .item-name-amount{
+            margin-left: 10px;
+        }
+        .add-remove-quantity{
+            margin-left: 80px;
+        }
+        .price-of-item{
+            margin-left: 30px;
+        }
+
+    }
+    .order-or-shop{
+        margin-left:60px;
+
+        background-color: white;
+        .continue-shopping,.place-order{
+            width: 200px;
+            padding: 3px;
+            margin: 5px;
+        }
+    }
+    
+    .payment-summery{
+        margin: 30px 0px 400px 0px;
+        
+        .payment-summery-title,.total-amount,.gst-plus-coupn,.amount-payable{
+            background-color: white;
+            margin-bottom: 1px;
+            padding: 10px;
+        }
+        
+    }
+}
+
+

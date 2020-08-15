@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="body container-fluid">
+    
+    <div class="row">
+        <div class="filter-box right-box col-sm-2">
+                <div>
+                    CATEGORY
+                </div>
+                <div class="filters-price">
+                    <h5>Price</h5>
+                    <input type="checkbox" name="0-100" id="0-100"/>
+                    <label for="0-100">Rs 0 - Rs 100</label><br>
+                    
+                    <input type="checkbox" name="101-500" id="101-500"/>
+                    <label for="101-500">Rs 101 - Rs 500</label><br>
+                    
+                    <input type="checkbox" name="501-1000" id="501-1000"/>
+                    <label for="501-1000">Rs 501 - Rs 1000</label><br>
+                    
+                    <input type="checkbox" name="1001-10000" id="1001-10000"/>
+                    <label for="1001-10000">Rs 1001 - Rs 10000</label><br>
+                    
+                </div>
+        </div>
+        <div class="col-sm-10">
+
+            <div class="show-opened-page  ">
+                <span>home</span>
+                <span> > diagnosis equipment</span>
+                <span> > gluco meter</span>
+            </div>
+            <div class="left-box card-img row ">
+                
+                <div *ngFor="let item of branddata" class="brand-box"> 
+                    <img class="item" src="{{item.image}}" alt="">
+                    <p class="item-detail">price : {{item.price}}</p>
+                    <p class="item-detail">detail: {{item.brand}}</p>
+                    <p class="item-detail">brand : {{item.brand}}</p>
+                    <p class="item-detail"> Discount <span class="discount">{{item.discount}}</span></p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<app-footer></app-footer>

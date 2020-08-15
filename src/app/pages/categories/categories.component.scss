@@ -1,0 +1,43 @@
+.body{
+    background-color: gray;
+    overflow: hidden;
+
+
+    .container-fluid{
+        background-color: white;
+        margin: 10px 0px 2px 0px;
+    
+
+
+        .categories{
+            width: 18%;
+            border: solid 1px gray;
+            text-align: center;
+            font-size: smaller;
+            margin: 10px;
+            
+        }
+    }
+}
+
+
+
+
+.advertising-Image{
+    margin: 0px;
+    padding: 10px;
+    background-color: white;
+}
+
+.all-categories{
+    padding: 20px;
+    background-color: rgb(240, 235, 235);
+    .items{
+        padding: 0px;
+        margin: 0px;
+    }
+    .item-img{
+        width: 50%;
+        margin: 5px;
+    }
+}

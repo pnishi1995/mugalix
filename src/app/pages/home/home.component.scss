@@ -1,0 +1,147 @@
+.body{
+    background: rgb(216, 213, 213);
+    
+    
+    .container-fluid{
+        overflow: hidden;
+
+
+        .categories-left{
+            padding: 10px 10px 0px 5px;
+            background-color: white;
+            margin: 10px 0px 10px 45px;
+            position: relative;
+
+            ul{
+                padding-inline-start:0px;
+            }
+
+            .Item-Options{
+                padding:4px 0px;
+                font-size: small;
+                list-style-type: none;
+            }
+
+            .Item-Options:hover{
+                border-top: 1px solid gainsboro;
+                border-bottom: 1px solid gainsboro;
+                color: red;
+            }
+            .options-Image{
+                width: 20px;
+                height: 20px;
+            }
+            .main{
+                color: red;
+            }
+        }
+        .sub-catagories{
+            position: absolute left 101%;
+            background-color: white;
+            
+        }
+        
+
+        .col-sm-7{
+            margin-top: 10px;
+            padding-right: 0px;
+            .advertising-Image{
+                width: 100%;
+            }
+            .row{
+                margin: 0px 0px 10px 0px;
+
+                .varieties-of-supply{
+                    width: 20%;
+                    background-color: white;
+                    border-left: 1px solid gray;
+                    border-right: 1px solid gray;
+                    font-weight: 500;
+                    .variety-details{
+                        font-size: small;
+                        text-align: center;
+                        
+                    }
+
+            }
+            .varieties-of-supply:hover{
+                width: 20%;
+                background-color: white;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+                color:rgb(33, 165, 206);
+                border-bottom: 3px solid purple;
+                font-weight: 500;
+            }
+        }
+            
+        }
+
+        .categories-right{
+            margin: 10px 10px 10px 15px;
+            background: white;
+
+            .advertisers{
+                padding: 5px 0px;
+            }
+        }
+    }
+
+    .products-container{
+        .bestsellers{
+            padding: 20px 0px 0px 40px;
+            font-weight: 600;
+            font-size: large;
+        }
+        
+
+
+        .products-box{
+            background-color: white;
+            margin: 0px 34px 10px 32px;
+            position: relative;
+            .product-details{
+                
+                width: 170px;
+                height: 325px;
+                text-align: center;
+                padding-left: 20px;
+                box-shadow: 1px 3px 3px rgb(168, 180, 236);
+                margin: 15px;
+                
+        
+        
+                .product-image{
+                    width: 70%;
+        
+                }
+
+                .details{
+                    font-size: xx-small;
+                    color: gray;
+                }
+                .name{
+                    font-family: 'Courier New', Courier, monospace;
+                    color: maroon;
+                    font-weight: 600;
+                }
+                .price{
+                    color: green;
+                    font-weight: 700;
+                }
+                .quantity,.brandName{
+                    font-weight: 800;
+                }
+            }
+            .product-details:hover{
+                text-align: center;
+                transition-duration: 500ms;
+                padding-left: 20px;
+                box-shadow: 5px 10px 15px rgb(168, 180, 236);
+                margin: 15px;
+            }
+        }
+        
+    }
+    
+}

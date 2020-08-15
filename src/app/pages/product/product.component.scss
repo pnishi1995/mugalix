@@ -1,0 +1,38 @@
+.body{
+    background: gainsboro;
+
+    .page-path{
+        padding: 10px;
+    }
+    .product-container{
+        margin: 0px 20px 5px 20px ;
+        background-color: white;
+    }
+
+    .product-detail{
+        padding: 50px 20px 20px 20px;
+        border:  solid gray 1px;
+        margin-top: 20px;
+
+        .price-and-rating{
+            width: 45%;
+        }
+        .check-delivery-and-others{
+            width: 55%;   
+        }
+    }
+    
+    .quantity{
+        width: 35px;
+    }
+    .input{
+        padding: 5px;
+        width: 50px;
+        border: solid 1px black;
+    }
+
+    .description-of-product{
+        background-color: white;
+        margin: 0px 20px 5px 20px;
+    }
+}

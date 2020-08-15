@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+  .owl-prev, .owl-next{
+  z-index:9;
+  position: absolute;
+  top: 150px;
+  height: 30px;
+  width:50px;
+  display: inline-block;
+  }
+  .owl-prev{
+  left: -34px;
+  }
+  .owl-next{
+  right: -34px;
+  }
+
+
+
+

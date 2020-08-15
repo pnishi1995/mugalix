@@ -1,0 +1,43 @@
+.topBar{
+    background-color: gainsboro;
+}
+.topBar-Options{
+    font-size: small;
+    padding: 10px;
+}
+.moglixLogo{
+    width: 130px;
+    padding:5px 0px 0px 40px;
+}
+
+.searchBar{
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+
+
+    .search-input{
+        width: 400px;
+        padding: 10px 0px 7px 0px;
+    }
+    .search-btn{
+        padding: 5px 2px 5px 2px;
+        width: 80px;
+        background-color: #dc1410;
+        color: white;
+        .fa-search{
+            padding: 5px;
+            font-size: 20px;
+        }
+    }
+
+    .search-bar-icons{
+        padding-right: 50px;
+            .fa{
+                padding: 5px;
+                font-size: 25px;
+            }
+            .fa-delicious{
+                color: #dc1410;
+            }
+        }
+}

@@ -1,0 +1,40 @@
+.body {
+    background-color: gainsboro;
+    
+
+
+
+    .brand-box{
+        width: 20%;
+        border: thin gainsboro 1px solid;
+        background-color: white;
+        margin-top: 3px;
+        margin-bottom: 1px;
+        
+        
+        
+        
+        .item{
+            width: 150px;
+            padding: 10px;
+        }
+        .item:hover{
+            width: 152px;
+            padding: 10px;
+        }
+        .item-detail{
+            text-align: center;
+            font-size: x-small;
+        }
+        .discount{
+            padding: 3px;
+            background-color: greenyellow;
+            text-align: center;
+        }
+        .show-opened-page{
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+}
+

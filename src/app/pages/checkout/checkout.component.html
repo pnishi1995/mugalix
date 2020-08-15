@@ -1,0 +1,127 @@
+<app-header></app-header>
+<div class="body">
+    <div class="row container">
+        <div class="singin-or-singup-before-checkout col-sm-8">
+
+            <div class="login">
+                <div class="login-title">
+                    1. SingUp / SingIn 
+                </div>
+                <div class="login-form-container">
+
+                    <form class="form-group" [formGroup]="loginForm">
+                        <label for="emailid">Your Email : </label>
+                        <input type="text"  name="emailid" id="emailid"  formControlName="emailid">
+                        
+                        <label for="password">Password : </label>
+                        <input type="text"  name="password" id="password"  formControlName="password">
+
+                        <button (click)="emailSubmit()" type="submit">Submit</button>
+                    </form>
+
+                </div>
+                
+            </div>
+
+
+
+
+
+
+            <div class="invoice">
+                <div class="invoice-type-title">
+                    2. Invoice Type
+                </div>
+                <div class="invoice-type-form">
+                    <form [formGroup]="invoiceform">
+                        <label for="retailInvoice">Retail Invoice : </label>
+                        <input type="checkbox" name="retailInvoice" id="retailInvoice" formControlName="retailInvoice">
+                        <label for="taxInvoice">Tax   Invoice   :</label>
+                        <input type="checkbox" name="taxInvoice" id="taxInvoice" formControlName="taxInvoice">
+                        <button (click)="submitInvoiceType()">Save</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="address-box">
+                <div class="address-title">
+                    3.Adddress
+                </div>
+                <div class="addressForm">
+                    <h5>Add your Shipping address</h5>
+                    <br>
+                    <form [formGroup]="shippingAddressForm">
+                        <label for="name">Name :</label>
+                        <input type="text" formControlName="name">
+                        <label for="email">Email :</label>
+                        <input type="text" formControlName="email" >
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        
+        
+        
+        <div class="cart-summery col-sm-4">
+            <div class="payment-summery ">
+
+                <div class="payment-summery-title">
+                    <h5>
+                        Payment Summary
+                    </h5>
+                    Your shopping cart contains 1 Product.
+                </div>
+    
+                <div class="total-amount">
+                    <span>
+                        Total Amount
+                    </span>
+                    <span>
+                        Rs : 2345
+                    </span>
+                </div>
+    
+                <div class="gst-plus-coupn">
+                    <div>
+                        <span>
+                            Total GST
+                        </span>
+                        <span>
+                            Rs : 421
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <span>
+                            Total Shipping
+                        </span>
+                        <span>
+                            Rs : 675
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Total coupon discount
+                        </span>
+                        <span>
+                            90
+                        </span>
+                    </div>
+                </div>
+                <div class="amount-payable">
+                    <span>
+                        Amount Payable
+                    </span>
+                    <span>
+                        Rs : 234
+                    </span>
+                </div>
+    
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 categories-left " >
+                <ul *ngFor="let item of categories" >
+                    
+                    <li class="Item-Options">
+                        <img class="options-Image" 
+                        src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </div>
+            
+            
+            <!-- <div class="sub-catagories row col-sm-1">
+                <ul>
+                    <li>gfhgjhg</li>
+                    <li>fcghvghvhvhjv</li>
+                    <li>hghjghkj</li>
+                    <li>hjbjhggj</li>
+                    <li>gdtffghg</li>
+                </ul>
+            </div> -->
+            
+            
+            <div class="col-sm-7">
+                <div class="advertising-Image" >
+                    <owl-carousel-o [options]="customOptions">
+                      <ng-container *ngFor="let image of flayersImages; let i = index;">
+                          <ng-template carouselSlide [id]="i">
+                              <img [id]="'kalua-' + i" class="advertising-Image" src="{{image.img_url}}" alt="">
+                          </ng-template>
+                      </ng-container>
+                    </owl-carousel-o>
+                </div>
+                <div class="row">
+                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages">
+                        <p class="variety-details">{{captions.caption}}</p>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="col-sm-2 categories-right"  >
+                <div *ngFor="let image of advertisers " >
+                    <img class="advertisers" src="{{image.img_url}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid products-container">
+    
+    <div class="row products-box" *ngFor="let item of categories" >
+        <p class="bestsellers col-sm-12" >{{item.name}}</p>
+        <div class="col-sm-12 ">
+        <owl-carousel-o [options]="productSlideOption">
+        <ng-container  *ngFor="let productDetails of item.products; let i = index;">
+        <ng-template carouselSlide>
+        <div  class="product-details">
+            <img class="product-image" src="{{productDetails.image_url}}" alt="">
+            <p class="name">{{productDetails.name}}</p>
+            <p class="brandName">Brand :{{productDetails.brand}}</p>
+            <p class="price">Price : {{productDetails.price}}</p>
+            <p class="quantity">Quantity left : {{productDetails.quantity}}</p>
+            <p class="details">Details : {{productDetails.specification}}</p>
+        </div>            
+        </ng-template>
+        </ng-container>
+        </owl-carousel-o>
+        </div>
+    </div>
+    
+
+</div>
+
+<app-footer></app-footer>

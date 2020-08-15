@@ -1,0 +1,168 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-sub-categories',
+  templateUrl: './sub-categories.component.html',
+  styleUrls: ['./sub-categories.component.scss']
+})
+export class SubCategoriesComponent implements OnInit {
+
+  branddata:Array<any>=[
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+  { 
+    image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+    brand:'kotaona',
+    price:5690,
+    discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+    { 
+      image:'https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg',
+      brand:'kotaona',
+      price:5690,
+      discount:'50%'
+  },
+  
+]
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

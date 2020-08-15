@@ -1,0 +1,26 @@
+.footer-container{
+
+    background-color: gainsboro;
+    .container-fluid{
+        background-color: white;
+        
+        .col-sm-6{
+            font-size:x-small;
+            color: gray;
+            margin-bottom: 2px;
+            
+            h6{
+                color: black;
+            }
+        
+        }
+        .site-Details-left-box{
+            padding: 40px 5px 5px 40px;
+        }
+        .site-Details-right-box{
+            padding: 40px 40px 5px 5px;
+        }
+        
+    }
+}
+
