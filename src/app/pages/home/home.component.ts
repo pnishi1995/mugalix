@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { HomeService } from './home.service';
 
 
@@ -10,12 +10,12 @@ import { HomeService } from './home.service';
 })
 
 export class  HomeComponent{
-    @ViewChild('sdsd', {static: true}) sdsd: TemplateRef;
+    @ViewChild('homeCrowsel', {static: true}) homeCrowsel;
     moglixHomePageData: any;
     categories:Array<any>;
     advertisers:Array<any>;
     flayersImages:Array<any>;
-    
+    dataForActiveCarousel=this.flayersImages;
     
 customOptions: OwlOptions = {
     loop: true,
@@ -66,7 +66,7 @@ productSlideOption: OwlOptions = {
         }
     },
     nav: true,
-    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right></i>"' ]
+    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right"></i>' ]
     }
 
     constructor(private _homeService: HomeService) {
@@ -96,6 +96,16 @@ productSlideOption: OwlOptions = {
             this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
         });
     }
-    
-    
-}``
+
+    goToSlide(index){
+      this.homeCrowsel.to('' + index);
+    }
+
+    activeSlides: SlidesOutputData;
+    getData(dataForActiveCarousel: SlidesOutputData) {
+      this.activeSlides = dataForActiveCarousel;
+      console.log(this.activeSlides);
+      // this.homeCrowsel._translatedCarousel$.subscribe(res) => {
+      // };
+    }
+}

@@ -27,7 +27,8 @@
             
             <div class="col-sm-7">
                 <div class="advertising-Image" >
-                    <owl-carousel-o [options]="customOptions">
+                    <owl-carousel-o [options]="customOptions" #homeCrowsel 
+                    (changed)="getData($event)" >
                       <ng-container *ngFor="let image of flayersImages; let i = index;">
                           <ng-template carouselSlide [id]="i">
                               <img [id]="'kalua-' + i" class="advertising-Image" src="{{image.img_url}}" alt="">
@@ -36,8 +37,10 @@
                     </owl-carousel-o>
                 </div>
                 <div class="row">
-                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages">
-                        <p class="variety-details">{{captions.caption}}</p>
+                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages; let j = index" (mouseenter)="goToSlide(j)">
+                    
+                      <p class="variety-details">{{captions.caption}}</p>
+                      
                     </div>
                 
                 </div>
