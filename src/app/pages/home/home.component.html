@@ -1,4 +1,7 @@
 <app-header></app-header>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <div class="body">
     <div class="container-fluid">
         <div class="row">
@@ -27,7 +30,7 @@
             
             <div class="col-sm-7">
                 <div class="advertising-Image" >
-                    <owl-carousel-o [options]="customOptions" #homeCrowsel 
+                    <owl-carousel-o id="homeCarausel" [options]="customOptions" #homeCrowsel 
                     (changed)="getData($event)" >
                       <ng-container *ngFor="let image of flayersImages; let i = index;">
                           <ng-template carouselSlide [id]="i">
@@ -37,7 +40,7 @@
                     </owl-carousel-o>
                 </div>
                 <div class="row">
-                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages; let j = index" (mouseenter)="goToSlide(j)">
+                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages; let j = index" (mouseenter)="goToSlide(j)" [class.active]="activeSlidesCaption[j]">
                     
                       <p class="variety-details">{{captions.caption}}</p>
                       
@@ -57,7 +60,7 @@
     <div class="row products-box" *ngFor="let item of categories" >
         <p class="bestsellers col-sm-12" >{{item.name}}</p>
         <div class="col-sm-12 ">
-        <owl-carousel-o [options]="productSlideOption">
+        <owl-carousel-o id="product-carousel"[options]="productSlideOption">
         <ng-container  *ngFor="let productDetails of item.products; let i = index;">
         <ng-template carouselSlide>
         <div  class="product-details">

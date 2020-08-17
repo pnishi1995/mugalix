@@ -1,6 +1,7 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { HomeService } from './home.service';
+import { newArray } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class  HomeComponent{
     advertisers:Array<any>;
     flayersImages:Array<any>;
     dataForActiveCarousel=this.flayersImages;
+    activeSlidesCaption:Array<Boolean>;
     
 customOptions: OwlOptions = {
     loop: true,
@@ -23,7 +25,9 @@ customOptions: OwlOptions = {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 1000,
+    autoplay: true,
+    autoplaySpeed: 1000,
     responsive: {
         0: {
         items: 1
@@ -39,7 +43,8 @@ customOptions: OwlOptions = {
         }
     },
     nav: true,
-    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right></i>"' ]
+    navText: [  '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+                '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
     }
 
 
@@ -50,26 +55,30 @@ productSlideOption: OwlOptions = {
     touchDrag: true,
     pullDrag: true,
     dots: false,
+    stagePadding: 0,
     navSpeed: 700,
+   margin: 0,
     responsive: {
         0: {
         items: 1
         },
         400: {
-        items: 1
+        items: 1,
         },
         740: {
-        items: 6
+        items: 6,
         },
         940: {
-        items: 6
+        items: 6,
         }
     },
     nav: true,
-    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right"></i>' ]
+    navText: [  '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+                '<i class="fa fa-arrow-right" aria-hidden="true"></i>' ]
     }
 
     constructor(private _homeService: HomeService) {
+        this.activeSlidesCaption=newArray(5).fill(false);
         
     }
     
@@ -99,13 +108,18 @@ productSlideOption: OwlOptions = {
 
     goToSlide(index){
       this.homeCrowsel.to('' + index);
+      console.log(this.homeCrowsel );
     }
 
     activeSlides: SlidesOutputData;
     getData(dataForActiveCarousel: SlidesOutputData) {
       this.activeSlides = dataForActiveCarousel;
       console.log(this.activeSlides);
-      // this.homeCrowsel._translatedCarousel$.subscribe(res) => {
-      // };
+      setTimeout(()=>{
+      this.activeSlidesCaption=newArray(5).fill(false);
+      this.activeSlidesCaption[dataForActiveCarousel.startPosition]=true;
+      
+      },0);
     }
+    
 }
