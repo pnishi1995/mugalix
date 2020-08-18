@@ -8,25 +8,16 @@
             <div class="col-sm-2 categories-left " >
                 <ul class="main-categories-of-left-corner" *ngFor="let item of categories" class="row">
                     
-                    <li class="Item-Options">
+                    <li class="Item-Options row">
                         <img class="options-Image" 
                         src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
                         {{item.name}}
-                    </li>
-                    <ul class="sub-catagories row ">
-                      <li>gfhgjhg</li>
-                      <li>fcghvghvhvhjv</li>
-                      <li>hghjghkj</li>
-                      <li>hjbjhggj</li>
-                      <li>gdtffghg</li>
-                    </ul>
+                        <ul class="sub-catagories" 
+                         *ngFor="let productDetails of item.products">
+                              <li>{{productDetails.sub_category}}</li>
+                        </ul>
+                    </li>    
                 </ul>
-
-            </div>
-            
-            
-            <div >
-                
             </div>
             
             

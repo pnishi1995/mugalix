@@ -1,54 +1,50 @@
-  .owl-prev, .owl-next{
-  z-index:9;
+.owl-prev,
+.owl-next {
+  z-index: 9;
   position: absolute;
   top: 150px;
   height: 30px;
-  width:50px;
+  width: 50px;
   display: inline-block;
-  }
-  .owl-prev{
-  left: -32px;
-  }
-  .owl-next{
-  right: -32px;
-  }
-  #homeCarausel .owl-theme .owl-nav [class*=owl-]{
-      display: none;
-  }
-
-.advertising-Image:hover{
-
-  #homeCarausel .owl-theme .owl-nav [class*=owl-]{
-    display: inline-block;
-    background: transparent;
-    color:white;
-    }
 }
-
-.owl-theme .owl-nav .disabled{
+.owl-prev {
+  left: -32px;
+}
+.owl-next {
+  right: -32px;
+}
+#homeCarausel .owl-theme .owl-nav [class*="owl-"] {
   display: none;
 }
-.owl-theme .owl-nav [class*=owl-]{
+
+.advertising-Image:hover {
+  #homeCarausel .owl-theme .owl-nav [class*="owl-"] {
+    display: inline-block;
+    background: transparent;
+    color: white;
+  }
+}
+
+.owl-theme .owl-nav .disabled {
+  display: none;
+}
+.owl-theme .owl-nav [class*="owl-"] {
   background: transparent;
   color: black;
 }
 
-.products-box:hover{
-  
-  .owl-theme .owl-nav [class*=owl-]{
-    background: rgb(223, 221, 221);
-    color: black;
-    box-shadow: 2px 2px 2px ;
-    transition-duration: 500ms;
-
+// .products-box:hover {
+// }
+.owl-theme .owl-nav [class*="owl-"] {
+  background: #d8d5d5;
+  color: rgb(92, 92, 92);
+  box-shadow: 0px 2px 8px #dedede;
+  transition-duration: 500ms;
 }
-
-}
-.products-container{
-    .owl-carousel.owl-drag .owl-item {
-      width: 194.833px !important;
-    }
-
+.products-container {
+  .owl-carousel.owl-drag .owl-item {
+    width: 174px !important;
+  }
 }
 
 

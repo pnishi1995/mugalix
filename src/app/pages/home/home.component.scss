@@ -1,176 +1,173 @@
-.body{
-    background: rgb(216, 213, 213);
+.body {
+  background: rgb(216, 213, 213);
+
+  .container-fluid {
+    overflow: hidden;
+
+    .categories-left {
+      padding: 10px 10px 0px 5px;
+      background-color: white;
+      margin: 10px 0px 10px 45px;
+      position: relative;
+
+      .sub-catagories {
+      background-color: white;
+      z-index: 2;
+      position: absolute;
+      left: 100%;
+      list-style: none;
+      display: none;
+      }
+
+
+      ul {
+        padding-inline-start: 0px;
+      }
+
+      .Item-Options {
+        width: 215px;
+        padding: 5px 0px 5px 50px;
+        font-size: small;
+        list-style-type: none;
+        padding-left: 40px;
+        margin-left: 10px;
+      }
+
+      
+
+      .Item-Options:hover {
+        padding: 5px 0px 5px 50px;
+        font-size: small;
+        list-style-type: none;
+        padding-left: 40px;
+        margin-left: 10px;
+        border-top: 1px solid gainsboro;
+        border-bottom: 1px solid gainsboro;
+        color: red;
+
+
+        .sub-catagories {
+          padding-top: 10px;
+          background-color: white;
+          z-index: 5;
+          position: absolute;
+          left: 100%;
+          list-style: none;
+          display: inline-block;
+          width: 200px;
+      }
+      }
+      .options-Image {
+        width: 20px;
+        height: 20px;
+      }
+      .main {
+        color: red;
+      }
+    }
     
-    
-    .container-fluid{
-        overflow: hidden;
 
+    .col-sm-7 {
+      margin-top: 10px;
+      padding-right: 0px;
+      .advertising-Image {
+        width: 100%;
+      }
+      .row {
+        margin: 0px 0px 10px 0px;
 
-        .categories-left{
-            padding: 10px 10px 0px 5px;
-            background-color: white;
-            margin: 10px 0px 10px 45px;
-            
-
-            ul{
-                padding-inline-start:0px;
-            }
-
-            .Item-Options{
-                padding:4px 0px;
-                font-size: small;
-                list-style-type: none;
-            }
-
-            .Item-Options:hover{
-                border-top: 1px solid gainsboro;
-                border-bottom: 1px solid gainsboro;
-                color: red;
-            }
-            .options-Image{
-                width: 20px;
-                height: 20px;
-            }
-            .main{
-                color: red;
-            }
-        }
-        .sub-catagories{
-            position: absolute;
-            list-style: none;
-            z-index: 2;
-            left: 100%;
-            margin: 0;
-            background-color: white;
-            display: none;
-}
-        }
-        .categories-left:hover{ 
-
-            .sub-catagories{
-            position: absolute;
-            list-style: none;
-            z-index: 2;
-            left: 100%;
-            margin: 0;
-            background-color: white;
-            display:inline-block;
-        }
-        }
-        .Item-Option{
-            position:relative;
-
+        .varieties-of-supply {
+          width: 20%;
+          background-color: white;
+          border-left: 1px solid gray;
+          border-right: 1px solid gray;
+          font-weight: 500;
+          .variety-details {
+            font-size: small;
+            text-align: center;
           }
-
-        .col-sm-7{
-            margin-top: 10px;
-            padding-right: 0px;
-            .advertising-Image{
-                width: 100%;
-            }
-            .row{
-                margin: 0px 0px 10px 0px;
-
-                .varieties-of-supply{
-                    width: 20%;
-                    background-color: white;
-                    border-left: 1px solid gray;
-                    border-right: 1px solid gray;
-                    font-weight: 500;
-                    .variety-details{
-                        font-size: small;
-                        text-align: center;
-                        
-                    }
-
-            }
-            .varieties-of-supply:hover,.active{
-                width: 20%;
-                background-color: white;
-                border-left: 1px solid gray;
-                border-right: 1px solid gray;
-                color:rgb(33, 165, 206);
-                border-bottom: 3px solid purple;
-                font-weight: 500;
-            }
         }
-            
+        .varieties-of-supply:hover,
+        .active {
+          width: 20%;
+          background-color: white;
+          border-left: 1px solid gray;
+          border-right: 1px solid gray;
+          color: rgb(33, 165, 206);
+          border-bottom: 3px solid purple;
+          font-weight: 500;
         }
-
-        .categories-right{
-            margin: 10px 10px 10px 15px;
-            background: white;
-
-            .advertisers{
-                padding: 5px 0px;
-            }
-        }
+      }
     }
 
-    .products-container{
-        .bestsellers{
-            padding: 20px 0px 0px 40px;
-            font-weight: 600;
-            font-size: large;
-        }
-        
-            
+    .categories-right {
+      margin: 10px 10px 10px 15px;
+      background: white;
 
-        .products-box{
-            background-color: white;
-            margin: 0px 34px 10px 32px;
-            position: relative;
-            .product-details{
-                padding: 2px;
-                width: 170px;
-                height: 325px;
-                text-align: center;
-                margin: 15px;
-                
-        
-        
-                .product-image{
-                    width: 70%;
-        
-                }
-
-                .details{
-                    font-size:small;
-                    color: gray;
-                    width: 100%;
-                    padding-left: 0px;
-                    max-width: 500px;
-                    min-width: 100px;
-                    word-break: break-all;
-                    max-height: 85px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
-                .name{
-                    font-family: 'Courier New', Courier, monospace;
-                    color: maroon;
-                    font-size: small;
-                    
-                }
-                .price{
-                    color: green;
-                    
-                }
-                .quantity,.brandName, .price{
-                      font-size: small;
-                      line-height: 3px;
-                }
-            }
-            .product-details:hover{
-                padding: 2px;
-                text-align: center;
-                transition-duration: 500ms;
-                box-shadow: 2px 5px 7px rgb(168, 180, 236);
-                margin: 15px;
-            }
-            
-        }
-        
+      .advertisers {
+        padding: 5px 0px;
+      }
     }
-    
+  }
+
+  .products-container {
+    .bestsellers {
+      padding: 20px 0px 0px 40px;
+      font-weight: 600;
+      font-size: large;
+    }
+
+    .products-box {
+      background-color: white;
+      margin: 0px 34px 10px 32px;
+      position: relative;
+      .product-details {
+        transition: all 0.6s;
+        width: 170px;
+        padding: 15px;
+        max-width: 170px;
+        height: 300px;
+        text-align: center;
+        margin: 15px;
+
+        .product-image {
+          margin: 0px auto;
+          width: 70%;
+        }
+
+        .details {
+          font-size: small;
+          color: gray;
+          width: 100%;
+          padding-left: 0px;
+          max-width: 500px;
+          min-width: 100px;
+          word-break: break-all;
+          max-height: 85px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .name {
+          font-family: "Courier New", Courier, monospace;
+          color: maroon;
+        }
+        .price {
+          color: green;
+        }
+        .quantity,
+        .brandName,
+        .price {
+          font-size: small;
+          line-height: 3px;
+        }
+      }
+      .product-details:hover {
+        text-align: center;
+        box-shadow: 0px 2px 5px rgb(153, 153, 153);
+        border-radius: 5px;
+        margin: 15px;
+      }
+    }
+  }
+}
