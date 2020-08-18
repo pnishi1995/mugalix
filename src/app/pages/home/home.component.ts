@@ -57,7 +57,9 @@ productSlideOption: OwlOptions = {
     dots: false,
     stagePadding: 0,
     navSpeed: 700,
-   margin: 0,
+    margin: 0,
+    mergeFit:true,
+    autoWidth:false,
     responsive: {
         0: {
         items: 1

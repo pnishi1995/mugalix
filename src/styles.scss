@@ -44,8 +44,14 @@
 }
 
 }
+.products-container{
+    .owl-carousel.owl-drag .owl-item {
+      width: 194.833px !important;
+    }
 
-.owl-item{
-  float: left;
-  display: block;
 }
+
+
+
+
+

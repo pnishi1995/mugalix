@@ -10,7 +10,7 @@
             padding: 10px 10px 0px 5px;
             background-color: white;
             margin: 10px 0px 10px 45px;
-            position: relative;
+            
 
             ul{
                 padding-inline-start:0px;
@@ -36,11 +36,31 @@
             }
         }
         .sub-catagories{
-            position: absolute left 101%;
+            position: absolute;
+            list-style: none;
+            z-index: 2;
+            left: 100%;
+            margin: 0;
             background-color: white;
-            
+            display: none;
+}
         }
-        
+        .categories-left:hover{ 
+
+            .sub-catagories{
+            position: absolute;
+            list-style: none;
+            z-index: 2;
+            left: 100%;
+            margin: 0;
+            background-color: white;
+            display:inline-block;
+        }
+        }
+        .Item-Option{
+            position:relative;
+
+          }
 
         .col-sm-7{
             margin-top: 10px;
@@ -101,7 +121,7 @@
             margin: 0px 34px 10px 32px;
             position: relative;
             .product-details{
-                
+                padding: 2px;
                 width: 170px;
                 height: 325px;
                 text-align: center;
@@ -130,6 +150,7 @@
                 .name{
                     font-family: 'Courier New', Courier, monospace;
                     color: maroon;
+                    font-size: small;
                     
                 }
                 .price{
@@ -142,9 +163,10 @@
                 }
             }
             .product-details:hover{
+                padding: 2px;
                 text-align: center;
                 transition-duration: 500ms;
-                box-shadow: 5px 10px 15px rgb(168, 180, 236);
+                box-shadow: 2px 5px 7px rgb(168, 180, 236);
                 margin: 15px;
             }
             
@@ -152,4 +174,3 @@
         
     }
     
-}
