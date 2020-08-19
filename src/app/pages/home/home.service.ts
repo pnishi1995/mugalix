@@ -8,6 +8,10 @@ export class HomeService {
     getCategoryProducts(data) {
         return this._dataService.get('http://192.168.0.110:4242/api/moglix/home/get-product-list');
     }
+    getCategorylist(data) {
+    
+    return this._dataService.get('http://192.168.0.110:4242/api/moglix/category/list');
+    }
     
     
 }

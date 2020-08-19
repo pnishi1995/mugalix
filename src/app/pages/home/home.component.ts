@@ -16,6 +16,8 @@ export class HomeComponent {
   flayersImages: Array<any>;
   dataForActiveCarousel = this.flayersImages;
   activeSlidesCaption: Array<Boolean>;
+  categorieslistData:any;
+  categoriesRawlist:any;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -103,6 +105,13 @@ export class HomeComponent {
       this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
       this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
     });
+
+    this._homeService.getCategorylist(data).subscribe((res)=>{
+      this.categorieslistData = res;
+      console.log(this.categorieslistData.data);
+      this.categoriesRawlist = this.categorieslistData.data  ;
+      
+    })
   }
 
   goToSlide(index) {

@@ -6,17 +6,20 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2 categories-left " >
-                <ul class="main-categories-of-left-corner" *ngFor="let item of categories" class="row">
-                    
-                    <li class="Item-Options row">
+                <ul class="main-categories-of-left-corner">
+                    <a [routerLink]="['/subcategories']" >
+                    <li class="Item-Options "  *ngFor="let category of categoriesRawlist">
                         <img class="options-Image" 
                         src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
-                        {{item.name}}
-                        <ul class="sub-catagories" 
-                         *ngFor="let productDetails of item.products">
-                              <li>{{productDetails.sub_category}}</li>
+                        {{category.category_name}}
+                        <ul class="sub-catagories" >
+                        <a [routerLink]="['/subcategories']" >
+                        <li *ngFor="let item of category.subcategory_list">
+                        {{item.subcategory}}</li>
+                        </a>   
                         </ul>
-                    </li>    
+                    </li> 
+                    </a>   
                 </ul>
             </div>
             

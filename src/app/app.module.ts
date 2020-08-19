@@ -10,7 +10,7 @@ import { HeaderMOdule } from "src/app/shared/components/header/header.module";
 import { CommonModule } from '@angular/common';
 import { CategoriesModule } from "./pages/categories/categories.module";
 import { FooterModule } from './shared/components/footer/footer.module';
-import { SubCategoriesModule } from "./pages/sub-categories/sub-categories.module";
+import { SubCategoriesModule } from "./pages/categories/sub-categories/sub-categories.module";
 import { CartModule } from './pages/cart/cart.module';
 import { ProductModule } from './pages/product/product.module';
 import { CheckoutModule } from './pages/checkout/checkout.module';

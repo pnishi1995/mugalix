@@ -7,10 +7,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import {CarouselHolderComponent } from "../../shared/components/carousel/carouselHolder.component";
 import { HomeService } from './home.service';
 import { SharedModule } from '../../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations:[HomeComponent,CarouselHolderComponent ],
-    imports:[ SharedModule, HeaderMOdule,CommonModule, FooterModule, CarouselModule ],
+    imports:[ SharedModule, HeaderMOdule,CommonModule, FooterModule, CarouselModule,RouterModule ],
     exports:[HomeComponent],
     providers: [
         HomeService
