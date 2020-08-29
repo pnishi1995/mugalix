@@ -3,8 +3,15 @@ import { CommonModule } from '@angular/common';
 import { SubCategoriesComponent } from './sub-categories.component';
 import { HeaderMOdule } from '../../../shared/components/header/header.module';
 import { FooterModule } from '../../../shared/components/footer/footer.module';
+import { RouterModule,Routes } from '@angular/router';
 
+const route : Routes = [
 
+  {
+  path:'', component: SubCategoriesComponent
+  }
+
+]
 
 
 @NgModule({
@@ -12,7 +19,8 @@ import { FooterModule } from '../../../shared/components/footer/footer.module';
   imports: [
   CommonModule,
     HeaderMOdule,
-    FooterModule
+    FooterModule,
+    RouterModule.forChild(route)
   ]
 })
 export class SubCategoriesModule { }

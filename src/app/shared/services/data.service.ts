@@ -14,7 +14,7 @@ export class DataService {
     setHttpHeaders() {
         this.headers = new HttpHeaders()
         .set('Content-Type', 'application/json; charset=utf-8')
-        .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjI2ODlhNGRjYjIzZjZhYjA0NWM4NjAiLCJpYXQiOjE1OTcxMjU2NzJ9.XrnnJmGwwjBI9pM3JJ2GsrSh62gccoJGhvaZPsdBn_c');
+        .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjI2ODlhNGRjYjIzZjZhYjA0NWM4NjAiLCJpYXQiOjE1OTg2MTU2MjF9.Lgy6Ba0oxIwDuu2fHelSbIeqCi1WbGDZUyptVyjqH70');
     }
 
     post(url, data) {

@@ -6,19 +6,27 @@ import { HeaderMOdule } from '../../shared/components/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer.module';
 import { Routes, RouterModule } from '@angular/router';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
-import { HomeComponent } from '../home/home.component';
+import { SubCategoriesService } from './sub-categories/sub-categories.service';
+
 
 const routes:Routes =[
   {
-  path:'categories',redirectTo:'subcategories',pathMatch:'full'
+  path:'', 
+  loadChildren:()=> import('./sub-categories/sub-categories.module').then((m)=>m.SubCategoriesModule)
   },
   {
-    path:'subcategories',
+    path:'subcategory',
+    loadChildren:()=> import('./sub-categories/sub-categories.module').then((m)=>m.SubCategoriesModule)
+  },
+  {
+    path:'subcategory/:subcategoryId',
     loadChildren:()=> import('./sub-categories/sub-categories.module').then((m)=>m.SubCategoriesModule)
   },
   
   
 ]
+
+
 
 
 
@@ -32,6 +40,7 @@ const routes:Routes =[
 
   ],
   exports:[CategoriesComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  providers:[SubCategoriesService]
 })
 export class CategoriesModule { }

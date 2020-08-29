@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div class="body container-fluid">
     
     <div class="row">
@@ -7,18 +7,15 @@
                     CATEGORY
                 </div>
                 <div class="filters-price">
-                    <h5>Price</h5>
-                    <input type="checkbox" name="0-100" id="0-100"/>
-                    <label for="0-100">Rs 0 - Rs 100</label><br>
+                    <h5>Brand</h5>
+                    <input type="checkbox" name="Anouk" id="Anouk"/>
+                    <label for="Anouk">Anouk</label><br>
                     
-                    <input type="checkbox" name="101-500" id="101-500"/>
-                    <label for="101-500">Rs 101 - Rs 500</label><br>
+                    <input type="checkbox" name="Libas" id="Libas"/>
+                    <label for="Libas">Libas</label><br>
                     
-                    <input type="checkbox" name="501-1000" id="501-1000"/>
-                    <label for="501-1000">Rs 501 - Rs 1000</label><br>
-                    
-                    <input type="checkbox" name="1001-10000" id="1001-10000"/>
-                    <label for="1001-10000">Rs 1001 - Rs 10000</label><br>
+                    <input type="checkbox" name="Varanga" id="Varanga"/>
+                    <label for="Varanga">Varanga</label><br>
                     
                 </div>
         </div>
@@ -31,12 +28,16 @@
             </div>
             <div class="left-box card-img row ">
                 
-                <div *ngFor="let item of branddata" class="brand-box"> 
-                    <img class="item" src="{{item.image}}" alt="">
-                    <p class="item-detail">price : {{item.price}}</p>
-                    <p class="item-detail">detail: {{item.brand}}</p>
-                    <p class="item-detail">brand : {{item.brand}}</p>
-                    <p class="item-detail"> Discount <span class="discount">{{item.discount}}</span></p>
+                <div class="brand-box" 
+                *ngFor="let item of this.productList"
+                [routerLink]="['/product/'+'/id/'+ item.id]" routerLinkActive="router-link-active" > 
+                    <img class="item" src="{{item.image_url}}" alt="">
+                    <p class="item-detail">Name :{{item.name}}</p>
+                    <p class="item-detail">detail: {{item.category}}</p>
+                    <p class="item-detail">subcategory:{{item.sub_category}} </p>
+                    <p class="item-detail"> brand:{{item.brand}} 
+                        
+                    </p>
                     
                 </div>
             </div>
@@ -44,4 +45,3 @@
         
     </div>
 </div>
-<app-footer></app-footer>

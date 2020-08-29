@@ -9,16 +9,24 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 const routes: Routes = [
   {
-    path:'',redirectTo:'home', pathMatch:'full'
+    path:'',component:HomeComponent
   },
   {
     path:'home',component:HomeComponent
   },
   {
-    path:'category',loadChildren:()=> import('./pages/categories/categories.module').then((m)=>m.CategoriesModule)
+    path:'category',
+    loadChildren:()=> import('./pages/categories/categories.module').then((m)=>m.CategoriesModule)
+  },
+  {
+    path:'category/:categoryId',
+    loadChildren:()=> import('./pages/categories/categories.module').then((m)=>m.CategoriesModule)
   },
   {
     path:'product',component:ProductComponent
+  },
+  {
+    path:'product/id/:productId',component:ProductComponent
   },
   {
     path:'cart',component:CartComponent

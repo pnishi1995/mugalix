@@ -20,12 +20,19 @@
 
     <div class="row searchBar">
         
-        <div class="col-sm-3"><img class="moglixLogo" src="https://cdn.moglix.com/assets/img/moglix-logo.jpg" alt=""></div>
+        <div class="col-sm-3"><img [routerLink]="['/home']"  class="moglixLogo" src="https://cdn.moglix.com/assets/img/moglix-logo.jpg" alt=""></div>
         
         <div class="col-sm-5"><input placeholder="I am Looking for...." class="search-input" type="text"><button class="search-btn" ><i class="fa fa-search" aria-hidden="true"></i></button></div>
         
         <div class="col-sm-4">
-            <span class="search-bar-icons"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</span>
+            <span class="search-bar-icons" [routerLink]="['/cart']"  >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span *ngIf="_commonService?.cart?.length !== 0" >
+            {{ _commonService?.cart?.length }}
+            </span>
+            
+            Cart
+            </span>
             <span class="search-bar-icons"><i class="fa fa-delicious" aria-hidden="true"></i>Deals</span>
             <span class="search-bar-icons"><i class="fa fa-user-plus" aria-hidden="true"></i>Sing In</span>
         </div>

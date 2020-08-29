@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div class="body">
     <div class="row container ">
         <div class="cart-items col-sm-8 ">
@@ -8,51 +8,59 @@
                 <div class="item-quantity"> Quantity</div>
                 <div class="item-amount">Amount</div>
             </div>
-            <div class="item-detail-summery row">
+            <div class="item-detail-summery row" *ngFor="let item of itemsInCart;let i = index;">
                 <div>
-                    <img class="item-pic" src="https://cdn.moglix.com/p/hJ3RjZlf7mjw9-small.jpg" alt="">
+                    <img class="item-pic" src="{{item.image_url}}" alt="">
                 </div>
                 <div class="item-name-amount">
-                    full Name Of The item <br>
-                    Price of the Item
+                    {{item.name}}
+                    <p>Price :{{item.price}}</p>
                 </div>
                 <div class="add-remove-quantity">
-                    <span class="removeOrAdd">-</span>
-                    <span class="removeOrAdd">1</span>
-                    <span class="removeOrAdd">+</span>
-                    <div> Remove Item</div>
+                    <span class="removeOrAdd"  (click)="udpateCartItemQuantity(i,'sub')">-</span>
+                    <span class="removeOrAdd">{{item.numberOfItemNeededByUser}}</span>
+                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
+                    <div (click)="removeItem(i)"> Remove Item</div>
                 </div>
                 <div class="price-of-item">
-                    <div class="amount">Amount</div>
-                    <div class="discount">Discount</div>
-                    <div class="price-detail">Price Detail</div>
+                    <div class="amount">Amount :Rs  {{item.price}}</div>
+                    <div class="discount">
+                    Quantity you selected : {{item.numberOfItemNeededByUser}}
+                    </div>
+                    <div class="price-detail">
+                    Product Total : Rs  {{item.productTotal}}
+                    </div>
                 </div>
             </div>
             <div class="order-or-shop">
-                <button class="continue-shopping">Continue shopping</button>
-                <button class="place-order">Place Order</button>
+                <button class="continue-shopping" [routerLink]="['/home']">
+                Continue shopping
+                </button>
+                <button class="place-order" [routerLink]="['/checkout']"  >
+                Place Order
+                </button>
             </div>
         </div>
         
-        <div class="payment-summery col-sm-4">
+        <div class="payment-summery col-sm-4" >
 
-            <div class="payment-summery-title">
+            <div class="payment-summery-title" >
                 <h5>
                     Payment Summary
                 </h5>
-                Your shopping cart contains 1 Product.
+                Your shopping cart contains {{itemsInCart.length}} Product.
             </div>
 
             <div class="total-amount">
                 <span>
                     Total Amount
                 </span>
-                <span>
-                    Rs : 2345
+                <span  >
+                    Rs : {{this.totalamount}} /-
                 </span>
             </div>
 
-            <div class="gst-plus-coupn">
+            <!-- <div class="gst-plus-coupn">
                 <div>
                     <span>
                         Total GST
@@ -78,13 +86,13 @@
                         90
                     </span>
                 </div>
-            </div>
+            </div> -->
             <div class="amount-payable">
                 <span>
                     Amount Payable
                 </span>
                 <span>
-                    Rs : 234
+                    Rs : {{this.totalamount}} /-
                 </span>
             </div>
 

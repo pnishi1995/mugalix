@@ -17,12 +17,12 @@
         padding: 10px 0px;
     }
     .itemdetail{
-        width: 55%;
+        width: 50%;
         
         
     }
     .item-quantity, .item-amount{
-        width: 20%;
+        width: 25%;
         
     }
     .removeOrAdd{
@@ -42,9 +42,10 @@
         }
         .item-name-amount{
             margin-left: 10px;
+            width: 150px;
         }
         .add-remove-quantity{
-            margin-left: 80px;
+            margin-left: 50px;
         }
         .price-of-item{
             margin-left: 30px;

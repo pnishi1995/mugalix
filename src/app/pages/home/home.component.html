@@ -1,25 +1,27 @@
-<app-header></app-header>
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
+
 <div class="body">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2 categories-left " >
                 <ul class="main-categories-of-left-corner">
-                    <a [routerLink]="['/subcategories']" >
-                    <li class="Item-Options "  *ngFor="let category of categoriesRawlist">
+                    
+                    <li class="Item-Options " *ngFor="let category of categoriesRawlist" >
+                    <a  [routerLink]="['/category/'+ category.id]" >
                         <img class="options-Image" 
                         src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
                         {{category.category_name}}
+                    </a>
+                    
                         <ul class="sub-catagories" >
-                        <a [routerLink]="['/subcategories']" >
-                        <li *ngFor="let item of category.subcategory_list">
-                        {{item.subcategory}}</li>
-                        </a>   
+                        <li *ngFor="let subcategory of category.subcategory_list" >
+                        <a [routerLink]="['/category/'+ category.id +'/subcategory/'+ subcategory.id]" >
+                        {{subcategory.subcategory}}
+                        </a>
+                        </li> 
                         </ul>
                     </li> 
-                    </a>   
+                      
                 </ul>
             </div>
             
@@ -59,7 +61,7 @@
         <owl-carousel-o id="product-carousel"[options]="productSlideOption">
         <ng-container  *ngFor="let productDetails of item.products; let i = index;">
         <ng-template carouselSlide>
-        <div  class="product-details">
+        <div  class="product-details" [routerLink]="['/product/'+'/id/'+ productDetails.id]" >
             <img class="product-image" src="{{productDetails.image_url}}" alt="">
             <p class="name">{{productDetails.name}}</p>
             <p class="brandName">Brand :{{productDetails.brand}}</p>
@@ -76,4 +78,4 @@
 
 </div>
 
-<app-footer></app-footer>
+

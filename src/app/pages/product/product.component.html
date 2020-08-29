@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div class="body">
     <div class="page-path">
         <span>Home</span>
@@ -9,30 +9,32 @@
     <div class="row product-container">
         
         <div class="product-Image">
-            <img src="https://cdn.moglix.com/p/Gds5YKXm6p3Tz-large.jpg" alt="">
+            <img src="{{productDetail?.image_url}}" alt="">
         </div>
 
         <div class="product-detail row">
 
             <div class="price-and-rating">
-                    <div>PRODUCT NAME AND BRAND</div>
-                    <div>PRODUCT RATING</div>
-                    <span>IN STOCK</span>     
-                    <div>reviews</div>
+                    <div>PRODUCT NAME :{{productDetail?.name}}  </div>
+                    <div>PRODUCT BRAND: {{productDetail?.brand}}</div>
+                    <span>IN STOCK: {{productDetail?.quantity}}</span>
                     <div>
-                        <span>Price:</span> 
-                        <span>Discount:</span>
+                        <span>Price:{{productDetail?.price}}</span> 
                     </div>    
                     <div>
                         Quantity : 
-                        <button class="quantity">-</button>
-                        <span class="input">1</span>
-                        <button class="quantity">+</button>
+                        <button class="quantity" 
+                        (click)="decreaseQuantityOfItemForCart()" >-</button>
+                        <span class="QuantityOfItemNeeded" id="QuantityOfItemNeeded">
+                            {{this.addOneMoreItem}}
+                        </span>
+                        <button class="quantity" 
+                        (click)="increaseQuantityOfItemForCart()" >+</button>
                     </div>
                         
                         
                     <div>
-                            <span><button>ADD TO CART</button></span>
+                            <span><button (click)="addToCart()" >ADD TO CART</button></span>
                             <span><button>BUY NOW</button></span>
                     </div>
                     
@@ -60,4 +62,4 @@
     </div>
 
 </div>
-<app-footer></app-footer>
+

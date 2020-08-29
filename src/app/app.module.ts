@@ -15,7 +15,7 @@ import { CartModule } from './pages/cart/cart.module';
 import { ProductModule } from './pages/product/product.module';
 import { CheckoutModule } from './pages/checkout/checkout.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { CommonService } from "../app/shared/services/common.service";
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent
   ],
   imports: [
+    
     CheckoutModule,
     ProductModule,
     CartModule,
@@ -37,7 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

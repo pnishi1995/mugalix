@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations:[HomeComponent,CarouselHolderComponent ],
-    imports:[ SharedModule, HeaderMOdule,CommonModule, FooterModule, CarouselModule,RouterModule ],
+    imports:[ SharedModule, HeaderMOdule,CommonModule, FooterModule,          CarouselModule,RouterModule ],
     exports:[HomeComponent],
     providers: [
         HomeService

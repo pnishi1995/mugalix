@@ -97,22 +97,21 @@ export class HomeComponent {
         '5f297373c25c696b14ef3015',
       ],
     };
+    
     this._homeService.getCategoryProducts(data).subscribe((res) => {
       this.moglixHomePageData = res;
-      console.log(this.moglixHomePageData);
       this.categories = this.moglixHomePageData.data.category_data;
-      console.log(this.categories);
       this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
       this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
     });
 
     this._homeService.getCategorylist(data).subscribe((res)=>{
       this.categorieslistData = res;
-      console.log(this.categorieslistData.data);
-      this.categoriesRawlist = this.categorieslistData.data  ;
-      
+      this.categoriesRawlist = this.categorieslistData.data  ; 
     })
   }
+  
+
 
   goToSlide(index) {
     this.homeCrowsel.to('' + index);
