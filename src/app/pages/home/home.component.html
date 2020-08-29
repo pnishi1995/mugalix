@@ -1,81 +1,76 @@
-
-
 <div class="body">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2 categories-left " >
-                <ul class="main-categories-of-left-corner">
-                    
-                    <li class="Item-Options " *ngFor="let category of categoriesRawlist" >
-                    <a  [routerLink]="['/category/'+ category.id]" >
-                        <img class="options-Image" 
-                        src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
+            <div class="col-sm-2 categories-left ">
+                <ul class="main-category">
+
+                    <li class="Item-Options " *ngFor="let category of categoriesRawlist"
+                        [routerLink]="['/category/'+ category.id]">
+                        <img class="options-Image"
+                            src="https://cdn.moglix.com/cms/flyout/Images_2020-06-03_18-21-41_medicalimage.png" alt="">
                         {{category.category_name}}
-                    </a>
-                    
-                        <ul class="sub-catagories" >
-                        <li *ngFor="let subcategory of category.subcategory_list" >
-                        <a [routerLink]="['/category/'+ category.id +'/subcategory/'+ subcategory.id]" >
-                        {{subcategory.subcategory}}
-                        </a>
-                        </li> 
+
+                        <ul class="sub-catagories">
+                            <li *ngFor="let subcategory of category.subcategory_list"
+                                [routerLink]="['/category/'+ category.id +'/subcategory/'+ subcategory.id]">
+                                {{subcategory.subcategory}}
+                            </li>
                         </ul>
-                    </li> 
-                      
+                    </li>
+
                 </ul>
             </div>
-            
-            
+
+
             <div class="col-sm-7">
-                <div class="advertising-Image" >
-                    <owl-carousel-o id="homeCarausel" [options]="customOptions" #homeCrowsel 
-                    (changed)="getData($event)" >
-                      <ng-container *ngFor="let image of flayersImages; let i = index;">
-                          <ng-template carouselSlide [id]="i">
-                              <img [id]="'kalua-' + i" class="advertising-Image" src="{{image.img_url}}" alt="">
-                          </ng-template>
-                      </ng-container>
+                <div class="advertising-Image">
+                    <owl-carousel-o id="homeCarausel" [options]="customOptions" #homeCrowsel
+                        (changed)="getData($event)">
+                        <ng-container *ngFor="let image of flayersImages; let i = index;">
+                            <ng-template carouselSlide [id]="i">
+                                <img [id]="'kalua-' + i" class="advertising-Image" src="{{image.img_url}}" alt="">
+                            </ng-template>
+                        </ng-container>
                     </owl-carousel-o>
                 </div>
                 <div class="row">
-                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages; let j = index" (mouseenter)="goToSlide(j)" [class.active]="activeSlidesCaption[j]">
-                    
-                      <p class="variety-details">{{captions.caption}}</p>
-                      
+                    <div class="varieties-of-supply" *ngFor="let captions of flayersImages; let j = index"
+                        (mouseenter)="goToSlide(j)" [class.active]="activeSlidesCaption[j]">
+
+                        <p class="variety-details">{{captions.caption}}</p>
+
                     </div>
-                
+
                 </div>
             </div>
-            <div class="col-sm-2 categories-right"  >
-                <div *ngFor="let image of advertisers " >
+            <div class="col-sm-2 categories-right">
+                <div *ngFor="let image of advertisers ">
                     <img class="advertisers" src="{{image.img_url}}" alt="">
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid products-container">
-    
-    <div class="row products-box" *ngFor="let item of categories" >
-        <p class="bestsellers col-sm-12" >{{item.name}}</p>
-        <div class="col-sm-12 ">
-        <owl-carousel-o id="product-carousel"[options]="productSlideOption">
-        <ng-container  *ngFor="let productDetails of item.products; let i = index;">
-        <ng-template carouselSlide>
-        <div  class="product-details" [routerLink]="['/product/'+'/id/'+ productDetails.id]" >
-            <img class="product-image" src="{{productDetails.image_url}}" alt="">
-            <p class="name">{{productDetails.name}}</p>
-            <p class="brandName">Brand :{{productDetails.brand}}</p>
-            <p class="price">Price : {{productDetails.price}}</p>
-            <p class="quantity">Quantity left : {{productDetails.quantity}}</p>
-            <p class="details">Details : {{productDetails.specification}}</p>
-        </div>            
-        </ng-template>
-        </ng-container>
-        </owl-carousel-o>
+
+        <div class="row products-box" *ngFor="let item of categories">
+            <p class="bestsellers col-sm-12">{{item.name}}</p>
+            <div class="col-sm-12 ">
+                <owl-carousel-o id="product-carousel" [options]="productSlideOption">
+                    <ng-container *ngFor="let productDetails of item.products; let i = index;">
+                        <ng-template carouselSlide>
+                            <div class="product-details" [routerLink]="['/product/'+'/id/'+ productDetails.id]">
+                                <img class="product-image" src="{{productDetails.image_url}}" alt="">
+                                <p class="name">{{productDetails.name}}</p>
+                                <p class="brandName">Brand :{{productDetails.brand}}</p>
+                                <p class="price">Price : {{productDetails.price}}</p>
+                                <p class="quantity">Quantity left : {{productDetails.quantity}}</p>
+                                <p class="details">Details : {{productDetails.specification}}</p>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
         </div>
+
+
     </div>
-    
-
-</div>
-
-

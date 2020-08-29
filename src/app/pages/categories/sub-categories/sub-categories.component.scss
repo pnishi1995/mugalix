@@ -32,12 +32,13 @@
       position: relative;
     }
     .item-detail {
-      text-align: center;
+      text-align: left;
       margin: 0px;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: 1px;
+      padding: 0px 15px;
       &.name {
-        font-size: 14px;
+        font-size: 15px;
         text-transform: capitalize;
         color: #dd3b2d;
         font-weight: 600;
