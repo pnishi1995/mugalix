@@ -28,7 +28,8 @@
       //   padding: 10px;
     }
     .item-container {
-      padding: 25px 10px;
+      padding: 25px 0px;
+      position: relative;
     }
     .item-detail {
       text-align: center;
@@ -41,6 +42,19 @@
         color: #404eb7;
         font-weight: 600;
         margin-bottom: 5px;
+      }
+      &.brand {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: #3e57c2;
+        color: white;
+        display: inline-block;
+        padding: 5px 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        top: -11px;
       }
       &:focus {
         outline: none;

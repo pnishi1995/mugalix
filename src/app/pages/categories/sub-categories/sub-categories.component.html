@@ -31,10 +31,10 @@
                     [routerLink]="['/product/'+'/id/'+ item.id]" routerLinkActive="router-link-active">
                     <img class="item" src="{{item.image_url}}" alt="">
                     <div class="item-container">
+                        <p class="item-detail brand"> {{item.brand}}</p>
                         <p class="item-detail name">{{item.name}}</p>
                         <p class="item-detail category">{{item.category}}</p>
                         <p class="item-detail subcategory">{{item.sub_category}} </p>
-                        <p class="item-detail brand"> {{item.brand}}</p>
                     </div>
                 </div>
             </div>
