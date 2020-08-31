@@ -7,13 +7,13 @@
             </div>
             <div class="filters-price">
                 <h5>Brand</h5>
-                <input type="checkbox" name="Anouk" id="Anouk" />
+                <input type="radio" name="filter" id="Anouk" />
                 <label for="Anouk">Anouk</label><br>
 
-                <input type="checkbox" name="Libas" id="Libas" />
+                <input type="radio" name="filter" id="Libas" />
                 <label for="Libas">Libas</label><br>
 
-                <input type="checkbox" name="Varanga" id="Varanga" />
+                <input type="radio" name="filter" id="Varanga" />
                 <label for="Varanga">Varanga</label><br>
 
             </div>
@@ -28,13 +28,11 @@
             <div class="left-box card-img row ">
 
                 <div class="brand-box" *ngFor="let item of this.productList"
-                    [routerLink]="['/product/'+'/id/'+ item.id]" routerLinkActive="router-link-active">
+                    [routerLink]="['/product/'+'/id/'+ item._id]" routerLinkActive="router-link-active">
                     <img class="item" src="{{item.image_url}}" alt="">
                     <div class="item-container">
                         <p class="item-detail brand"> {{item.brand}}</p>
                         <p class="item-detail name">{{item.name}}</p>
-                        <!-- <p class="item-detail category">{{item.category}}</p>
-                        <p class="item-detail subcategory">{{item.sub_category}} </p> -->
                         <p class="item-detail subcategory">{{item.quantity}} items </p>
                         <p class="item-detail subcategory">RS: {{item.price}} </p>
                     </div>

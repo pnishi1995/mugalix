@@ -121,7 +121,7 @@ export class HomeComponent {
   activeSlides: SlidesOutputData;
   getData(dataForActiveCarousel: SlidesOutputData) {
     this.activeSlides = dataForActiveCarousel;
-    console.log(this.activeSlides);
+    
     setTimeout(() => {
       this.activeSlidesCaption = newArray(5).fill(false);
       this.activeSlidesCaption[dataForActiveCarousel.startPosition] = true;

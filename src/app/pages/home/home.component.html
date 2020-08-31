@@ -58,7 +58,7 @@
                 <owl-carousel-o id="product-carousel" [options]="productSlideOption">
                     <ng-container *ngFor="let productDetails of item.products; let i = index;">
                         <ng-template carouselSlide>
-                            <div class="product-details" [routerLink]="['/product/'+'/id/'+ productDetails.id]">
+                            <div class="product-details" [routerLink]="['/product/'+'/id/'+ productDetails._id]">
                                 <img class="product-image" src="{{productDetails.image_url}}" alt="">
                                 <p class="name">{{productDetails.name}}</p>
                                 <p class="brandName">Brand :{{productDetails.brand}}</p>

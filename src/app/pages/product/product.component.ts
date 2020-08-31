@@ -13,6 +13,8 @@ export class ProductComponent implements OnInit {
   addOneMoreItem:number;
   addProductInCart:Array<any>;
   itemsInCart=[];
+
+
   constructor(public _routes:ActivatedRoute,
   public _productService:ProductService,
   public _commonService:CommonService) {
