@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SubCategoriesService } from './sub-categories.service';
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { CommonPipe } from '../../../shared/pipes/common.pipe';
+import { CommonService } from './../../../shared/services/common.service';
+
 @Component({
   selector: 'app-sub-categories',
   templateUrl: './sub-categories.component.html',
@@ -13,15 +14,17 @@ export class SubCategoriesComponent implements OnInit {
   productListCopy: any;
 
   constructor(
-  private _commonPipe: CommonPipe,
+    private _commonPipe: CommonPipe,
     public _routes: ActivatedRoute,
-    public _subCategoriesService: SubCategoriesService
+    private _commonService: CommonService,
+    public _subCategoriesService: SubCategoriesService,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
     this.getProductList();
   }
-  selectedBrand:string='';
+  selectedBrand: string = '';
   selectedBrands: Array<string> = [];
   brands: Array<string> = [];
   getBrands(data) {
@@ -36,23 +39,25 @@ export class SubCategoriesComponent implements OnInit {
   }
 
   updateProductList(event, brand) {
-  console.log(event.target.checked);
-  const index = this.selectedBrands.indexOf(brand);
-  console.log(index);
+    console.log(event.target.checked);
+    const index = this.selectedBrands.indexOf(brand);
+    console.log(index);
 
-  // index > -1 matlab already hai brand 
-  
-  if(event.target.checked && index < 0) {
-    //push
-    this.selectedBrands.push(brand);
-  } else if (index > -1) {
-    // hataogi
-    this.selectedBrands.splice(index, 1);
+    // index > -1 matlab already hai brand
+
+    if (event.target.checked && index < 0) {
+      //push
+      this.selectedBrands.push(brand);
+    } else if (index > -1) {
+      // hataogi
+      this.selectedBrands.splice(index, 1);
+    }
+    this.productList = this._commonPipe.transform(
+      this.productListCopy,
+      this.selectedBrands
+    );
+    console.log(this.selectedBrands);
   }
-  this.productList = this._commonPipe.transform(this.productListCopy, this.selectedBrands);
-  console.log(this.selectedBrands);
-  }
-  
 
   findUnique(value, index, self) {
     return self.indexOf(value) === index;

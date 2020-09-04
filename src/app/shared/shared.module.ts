@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonPipe } from './pipes/common.pipe';
+import { CommonPipe, ConvertnamePipe } from './pipes/common.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [HttpClientModule],
-  declarations: [CommonPipe],
-  exports: [CommonPipe],
-  providers: [CommonPipe],
+  imports: [HttpClientModule, CommonModule],
+  declarations: [CommonPipe, ConvertnamePipe],
+  exports: [CommonPipe, ConvertnamePipe],
+  providers: [CommonPipe, ConvertnamePipe],
 })
 export class SharedModule {}

@@ -1,61 +1,85 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { SingUpOrSingInService } from './sing-up-or-sing-in.service';
+import { Router } from '@angular/router';
+import { CommonService } from '../../shared/services/common.service';
+import { DataService } from '../../shared/services/data.service';
+
 @Component({
   selector: 'app-sing-up-or-sing-in',
   templateUrl: './sing-up-or-sing-in.component.html',
-  styleUrls: ['./sing-up-or-sing-in.component.scss']
+  styleUrls: ['./sing-up-or-sing-in.component.scss'],
 })
 export class SingUpOrSingInComponent implements OnInit {
-  loginForm:FormGroup;
-  logInDataRecieved:any;
-  singUpForm:FormGroup;
-  singUpDataRecieved:any;
-  showPopup: boolean = false;
-  showBox:boolean = false;
-  hideBox:boolean = false;
-  check:string="ghbytredfhuytrff"
-  commonUrl: string = "http://192.168.0.110:4242/api/moglix"
-  constructor(public _singUpOrSingInService:SingUpOrSingInService) { 
-
+  loginForm: FormGroup;
+  logInDataRecieved: any;
+  singUpForm: FormGroup;
+  singUpDataRecieved: any;
+  showPopup: boolean = true;
+  showBox: boolean = false;
+  hideBox: boolean = false;
+  check: string = 'ghbytredfhuytrff';
+  commonUrl: string = 'http://192.168.0.110:4242/api/moglix';
+  constructor(
+    public _singUpOrSingInService: SingUpOrSingInService,
+    private _router: Router,
+    private _commonService: CommonService,
+    private _dataService: DataService
+  ) {
     this.loginForm = new FormGroup({
-    email : new FormControl,
-    password:new FormControl
-    })
+      email: new FormControl(),
+      password: new FormControl(),
+    });
     this.singUpForm = new FormGroup({
-      
-      f_name: new FormControl,
-      l_name:new FormControl,
-      email:new FormControl,
-      password:new FormControl,
-      role:new FormControl
-    
-    })
-    setTimeout(() => {
-    this.showPopup = true;
-    }, 2000);
-  }
-  logIn(){
-    this._singUpOrSingInService.postUserDetails(this.commonUrl+'/login' , this.loginForm.value).subscribe((res)=>{
-    this.logInDataRecieved= res
-    console.log(this.logInDataRecieved)});
-    
-    console.log(this.loginForm.value);
-  }
-  singUp(){
-    this._singUpOrSingInService.postUserDetails(this.commonUrl+'/sign-up', this.singUpForm.value).subscribe((res)=>{
-    this.singUpDataRecieved = res;
-      console.log(res,this.singUpDataRecieved);
+      f_name: new FormControl(),
+      l_name: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
+      role: new FormControl(),
     });
   }
-  showSingUpForm(){
+  logIn() {
+    this._singUpOrSingInService
+      .postUserDetails(this.commonUrl + '/login', this.loginForm.value)
+      .subscribe(
+        (res) => {
+          if (res['status']) {
+            this.setAndUpdateToken(res);
+          } else {
+            this._commonService.showErrorToast('Something went wrong', 'Error');
+          }
+        },
+        (err) => {
+          this._commonService.showErrorToast(err.error.error, 'Error');
+        }
+      );
+
+    console.log(this.loginForm.value);
+  }
+
+  setAndUpdateToken(res) {
+    localStorage.setItem('token', res['data']['token']);
+    localStorage.setItem('user', JSON.stringify(res['data']['user']));
+    this._commonService.updateToken();
+    this._dataService.setHttpHeaders();
+    this._router.navigateByUrl('/home');
+  }
+
+  singUp() {
+    this._singUpOrSingInService
+      .postUserDetails(this.commonUrl + '/sign-up', this.singUpForm.value)
+      .subscribe((res) => {
+        this.singUpDataRecieved = res;
+        this.setAndUpdateToken(res);
+      });
+  }
+  showSingUpForm() {
     this.showBox = true;
     this.hideBox = true;
   }
   ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this._router.navigateByUrl('/home');
+    }
   }
-
 }
-
-
-

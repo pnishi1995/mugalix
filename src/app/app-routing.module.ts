@@ -5,43 +5,61 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
-
-
+import { AuthGuard } from './shared/services/auth.guard.service';
 
 const routes: Routes = [
   {
-    path:'',component:HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'home',component:HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path:'category',
-    loadChildren:()=> import('./pages/categories/categories.module').then((m)=>m.CategoriesModule)
+    path: 'category',
+    loadChildren: () =>
+      import('./pages/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+    canActivate: [AuthGuard],
   },
   {
-    path:'category/:categoryId',
-    loadChildren:()=> import('./pages/categories/categories.module').then((m)=>m.CategoriesModule)
+    path: 'category/:categoryId',
+    loadChildren: () =>
+      import('./pages/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+    canActivate: [AuthGuard],
   },
   {
-    path:'product',component:ProductComponent
+    path: 'product',
+    component: ProductComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'product/id/:productId',component:ProductComponent
+    path: 'product/id/:productId',
+    component: ProductComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'cart',component:CartComponent
+    path: 'cart',
+    component: CartComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'checkout',component:CheckoutComponent
+    path: 'checkout',
+    component: CheckoutComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'singin',component: SingUpOrSingInComponent
-  }
+    path: 'singin',
+    component: SingUpOrSingInComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
