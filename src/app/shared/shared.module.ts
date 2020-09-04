@@ -6,6 +6,6 @@ import { CommonPipe } from './pipes/common.pipe';
   imports: [HttpClientModule],
   declarations: [CommonPipe],
   exports: [CommonPipe],
-  providers: [],
+  providers: [CommonPipe],
 })
 export class SharedModule {}

@@ -1,3 +1,4 @@
+import { SingUpOrSingInComponent } from './pages/sing-up-or-sing-in/sing-up-or-sing-in.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -33,11 +34,14 @@ const routes: Routes = [
   },
   {
     path:'checkout',component:CheckoutComponent
+  },
+  {
+    path:'singin',component: SingUpOrSingInComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -10,7 +10,5 @@ import { CommonService } from '../../services/common.service';
 export class HeaderComponent{
   
   constructor(public _commonService:CommonService){
-
-    console.log(this._commonService.cart);
   }
 }

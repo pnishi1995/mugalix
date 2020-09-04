@@ -4,12 +4,14 @@ import { CheckoutComponent } from './checkout.component';
 import { HeaderMOdule } from '../../shared/components/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SingUpOrSingInModule } from '../sing-up-or-sing-in/sing-up-or-sing-in.module';
 
 
 
 @NgModule({
   declarations: [CheckoutComponent],
   imports: [
+    SingUpOrSingInModule,
     CommonModule,
     HeaderMOdule,
     FooterModule,

@@ -16,14 +16,14 @@ import { ProductModule } from './pages/product/product.module';
 import { CheckoutModule } from './pages/checkout/checkout.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonService } from "../app/shared/services/common.service";
-
+import { SingUpOrSingInModule } from "./pages/sing-up-or-sing-in/sing-up-or-sing-in.module";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    
+    SingUpOrSingInModule,
     CheckoutModule,
     ProductModule,
     CartModule,

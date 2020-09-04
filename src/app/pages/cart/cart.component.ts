@@ -10,7 +10,6 @@ export class CartComponent implements OnInit {
   itemsInCart:Array<any>;
   arrayOftotalforEachproduct=[];
   totalamount;
-  NoOfFinalItemByuser;
   constructor(public _commonService:CommonService) {}
 
   ngOnInit(): void {
@@ -21,8 +20,8 @@ export class CartComponent implements OnInit {
 
   ItemAddedToCart(){
     this.itemsInCart = this._commonService.cart;
+    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
     this.getTotalPayable();
-
   }
 
   udpateCartItemQuantity(index: number, type: string) {
@@ -33,7 +32,7 @@ export class CartComponent implements OnInit {
       this.itemsInCart[index].numberOfItemNeededByUser -= 1;
       this.itemsInCart[index].productTotal -= this.itemsInCart[index].price;
     }
-
+    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
     this.getTotalPayable();
   } 
   
@@ -42,11 +41,16 @@ export class CartComponent implements OnInit {
     for(let index=0, length= this.itemsInCart.length; index< length; ++index){
       this.totalamount = this.totalamount + this.itemsInCart[index].productTotal;
     }
+    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
   }
 
   removeItem(i){
     this.itemsInCart.splice(i,1);
     this.getTotalPayable()
+    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
   }
   
+  
 }
+
+

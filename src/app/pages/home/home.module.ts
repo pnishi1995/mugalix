@@ -9,9 +9,11 @@ import { HomeService } from './home.service';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 
+import { ByeartTableModule } from '@byheart/table';
+
 @NgModule({
     declarations:[HomeComponent,CarouselHolderComponent ],
-    imports:[ SharedModule, HeaderMOdule,CommonModule, FooterModule,          CarouselModule,RouterModule ],
+    imports:[ ByeartTableModule, SharedModule, HeaderMOdule,CommonModule, FooterModule,          CarouselModule,RouterModule ],
     exports:[HomeComponent],
     providers: [
         HomeService

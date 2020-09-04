@@ -1,0 +1,45 @@
+<div class="singinPage" [class.show]="showPopup">
+<div class="singIn" >
+<form class="singUpBox" [class.showForm]="showBox" [formGroup]="singUpForm">
+
+<label for="f_name">First Name : </label>
+  <input class="form-group" type="text"  name="f_name" id="f_name"  formControlName="f_name">
+
+
+<label for="l_name">Last Name : </label>
+  <input class="form-group" type="text"  name="l_name" id="l_name"  formControlName="l_name">
+
+
+<label for="email">Your Email : </label>
+  <input class="form-group" type="text"  name="email" id="email"  formControlName="email">
+
+
+<label for="password">Password : </label>
+  <input class="form-group" type="password"  name="password" id="singupPassword"  formControlName="password">
+
+  <label for="role">role : </label>
+  <input class="form-group" type="number"  name="role" id="role"  formControlName="role" max="9" min="0">
+
+  <button (click)="singUp()" type="submit">Submit </button>
+  
+</form>
+<form class="loginForm" [class.hideForm]="hideBox" [formGroup]="loginForm ">
+
+<h6>You need to Login first..</h6>
+
+<label for="email">Your Email : </label>
+  <input class="form-group" type="text"  name="email" id="loginEmail"  formControlName="email">
+
+  <label for="password">password : </label>
+  <input class="form-group" type="password"  name="password" id="loginPassword"  formControlName="password">
+
+  <button (click)="logIn()" type="submit">Submit</button>
+
+  <div class="changeForm" (click)="showSingUpForm()">click here If You have yet not registered
+</div>
+</form>
+
+</div>
+
+
+</div>

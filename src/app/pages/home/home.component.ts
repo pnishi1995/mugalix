@@ -9,6 +9,17 @@ import { newArray } from '@angular/compiler/src/util';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+config: any = {
+  api: 'https://jsonplaceholder.typicode.com',
+  tableConfig: {
+    limit: 5,
+  },
+  styleConfig: {
+    theme: {
+      background: '#3e3c89',
+    },
+  },
+};
   @ViewChild('homeCrowsel', { static: true }) homeCrowsel;
   moglixHomePageData: any;
   categories: Array<any>;
