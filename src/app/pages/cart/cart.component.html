@@ -1,9 +1,8 @@
-
 <div class="body">
     <div class="row container ">
         <div class="cart-items col-sm-8 ">
             <div class="number-of-item-in-cart">My Cart (number)</div>
-            <div class="cart-details row"> 
+            <div class="cart-details row">
                 <div class="itemdetail"> Item detail </div>
                 <div class="item-quantity"> Quantity</div>
                 <div class="item-amount">Amount</div>
@@ -17,34 +16,34 @@
                     <p>Price :{{item.price}}</p>
                 </div>
                 <div class="add-remove-quantity">
-                    <span class="removeOrAdd"  (click)="udpateCartItemQuantity(i,'sub')">-</span>
+                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'sub')">-</span>
                     <span class="removeOrAdd">{{item.numberOfItemNeededByUser}}</span>
                     <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
                     <div (click)="removeItem(i)"> Remove Item</div>
                 </div>
                 <div class="price-of-item">
-                    <div class="amount">Amount :Rs  {{item.price}}</div>
+                    <div class="amount">Amount :Rs {{item.price}}</div>
                     <div class="discount">
-                    Quantity you selected : {{item.numberOfItemNeededByUser}}
+                        Quantity you selected : {{item.numberOfItemNeededByUser}}
                     </div>
                     <div class="price-detail">
-                    Product Total : Rs  {{item.productTotal}}
+                        Product Total : Rs {{ item.price*item.numberOfItemNeededByUser }}
                     </div>
                 </div>
             </div>
             <div class="order-or-shop">
                 <button class="continue-shopping" [routerLink]="['/home']">
-                Continue shopping
+                    Continue shopping
                 </button>
-                <button class="place-order" [routerLink]="['/checkout']"  >
-                Place Order
+                <button class="place-order" [routerLink]="['/checkout']">
+                    Place Order
                 </button>
             </div>
         </div>
-        
-        <div class="payment-summery col-sm-4" >
 
-            <div class="payment-summery-title" >
+        <div class="payment-summery col-sm-4">
+
+            <div class="payment-summery-title">
                 <h5>
                     Payment Summary
                 </h5>
@@ -55,7 +54,7 @@
                 <span>
                     Total Amount
                 </span>
-                <span  >
+                <span>
                     Rs : {{this.totalamount}} /-
                 </span>
             </div>
