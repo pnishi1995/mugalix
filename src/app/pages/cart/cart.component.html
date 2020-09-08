@@ -1,4 +1,4 @@
-
+<app-loader></app-loader>
 <div class="body">
     <div class="row container ">
         <div class="cart-items col-sm-8 ">
@@ -8,7 +8,7 @@
                 <div class="item-quantity"> Quantity</div>
                 <div class="item-amount">Amount</div>
             </div>
-            <div class="item-detail-summery row" *ngFor="let item of itemsInCart;let i = index;">
+            <div class="item-detail-summery row" *ngFor="let item of this._commonService.cart;let i = index;">
                 <div>
                     <img class="item-pic" src="{{item.image_url}}" alt="">
                 </div>
@@ -18,17 +18,14 @@
                 </div>
                 <div class="add-remove-quantity">
                     <span class="removeOrAdd"  (click)="udpateCartItemQuantity(i,'sub')">-</span>
-                    <span class="removeOrAdd">{{item.numberOfItemNeededByUser}}</span>
+                    <span class="removeOrAdd">{{item.quantity}}</span>
                     <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
                     <div (click)="removeItem(i)"> Remove Item</div>
                 </div>
                 <div class="price-of-item">
                     <div class="amount">Amount :Rs  {{item.price}}</div>
                     <div class="discount">
-                    Quantity you selected : {{item.numberOfItemNeededByUser}}
-                    </div>
-                    <div class="price-detail">
-                    Product Total : Rs  {{item.productTotal}}
+                    Quantity you selected : {{item.quantity}}
                     </div>
                 </div>
             </div>
@@ -48,7 +45,7 @@
                 <h5>
                     Payment Summary
                 </h5>
-                Your shopping cart contains {{itemsInCart.length}} Product.
+                Your shopping cart contains {{this._commonService.cart.length}} Product.
             </div>
 
             <div class="total-amount">
@@ -56,43 +53,16 @@
                     Total Amount
                 </span>
                 <span  >
-                    Rs : {{this.totalamount}} /-
+                    Rs : {{totalPrice}} /-
                 </span>
             </div>
-
-            <!-- <div class="gst-plus-coupn">
-                <div>
-                    <span>
-                        Total GST
-                    </span>
-                    <span>
-                        Rs : 421
-                    </span>
-                </div>
-                
-                <div>
-                    <span>
-                        Total Shipping
-                    </span>
-                    <span>
-                        Rs : 675
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        Total coupon discount
-                    </span>
-                    <span>
-                        90
-                    </span>
-                </div>
-            </div> -->
+            
             <div class="amount-payable">
                 <span>
                     Amount Payable
                 </span>
                 <span>
-                    Rs : {{this.totalamount}} /-
+                    Rs : {{totalPrice}} /-
                 </span>
             </div>
 

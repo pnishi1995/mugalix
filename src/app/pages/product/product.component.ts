@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from './product.service';
 import { CommonService } from 'src/app/shared/services/common.service';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-product',
@@ -11,28 +12,26 @@ import { CommonService } from 'src/app/shared/services/common.service';
 export class ProductComponent implements OnInit {
   productDetail:any;
   addOneMoreItem:number;
-  addProductInCart:Array<any>;
-  itemsInCart=[];
-
-
+  totalAmount;
+  updatedCart;
+  newaddedItem :Array<any>;
   constructor(public _routes:ActivatedRoute,
   public _productService:ProductService,
-  public _commonService:CommonService) {
-  console.log(this._routes.params);
-  console.log(this._routes.params['value']);
+  public _commonService:CommonService,
+  public _dataService:DataService ) {
   this.addOneMoreItem=1;
   this.addOneMoreItem!==1? this.increaseQuantityOfItemForCart() : this.decreaseQuantityOfItemForCart();
   }
 
   ngOnInit(): void {
-    this.getProduct()
-
+    this.getProduct();
   }
 
   getProduct(){
-    this._productService.getProduct('http://192.168.0.110:4242/api/moglix/product/id/'+ this._routes.params['value'].productId).subscribe((res)=>{
-      this.productDetail = res['data'] 
+    this._productService.getProduct(this._commonService.commonUrl+'/product/id/'+ this._routes.params['value'].productId).subscribe((res)=>{
+      this.productDetail= res['data']
     })
+
   }
 
   increaseQuantityOfItemForCart(){
@@ -48,12 +47,22 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
-    this.addProductInCart = JSON.parse(localStorage.getItem('addedProduct'));
-    this.addProductInCart? this.addProductInCart:this.addProductInCart=[];
-    this.addProductInCart.push(this.productDetail);
-    this.productDetail.numberOfItemNeededByUser=this.addOneMoreItem;
-    this.productDetail.productTotal= (this.productDetail.price * this.productDetail.numberOfItemNeededByUser);
-    localStorage.setItem('addedProduct',JSON.stringify(this.addProductInCart)) ;
-    this._commonService.getNumberofProductsAddedToCart(JSON.parse(localStorage.getItem('addedProduct')));
+    const product = {
+      productId:this.productDetail['id'],
+      name:this.productDetail['name'],
+      brand:this.productDetail['brand'],
+      price:this.productDetail['price'],
+      quantity:this.addOneMoreItem
+    } 
+    
+    this._commonService.cart.push(product);
+    this._dataService.post(this._commonService.commonUrl +'/cart/update',
+    {items:this._commonService.cart}).subscribe((res)=>{
+    localStorage.setItem('updatedCart',JSON.stringify(res['cart']['items']));
+    this._commonService.updateMyCart();
+    })
+    
   }
+  
+
 }

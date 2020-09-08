@@ -34,14 +34,11 @@ export class SubCategoriesComponent implements OnInit {
         return item.brand;
       })
       .filter(this.findUnique);
-
-    // this.selectedBrand = this.brands[0];
+      // this.selectedBrand = this.brands[0];
   }
 
   updateProductList(event, brand) {
-    console.log(event.target.checked);
     const index = this.selectedBrands.indexOf(brand);
-    console.log(index);
 
     // index > -1 matlab already hai brand
 
@@ -56,7 +53,6 @@ export class SubCategoriesComponent implements OnInit {
       this.productListCopy,
       this.selectedBrands
     );
-    console.log(this.selectedBrands);
   }
 
   findUnique(value, index, self) {

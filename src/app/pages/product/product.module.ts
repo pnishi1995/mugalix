@@ -6,6 +6,7 @@ import { FooterModule } from '../../shared/components/footer/footer.module';
 import { ProductService } from './product.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { LoaderModule } from '../loader/loader.module';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     FooterModule,
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    LoaderModule
   ],
   providers:[ProductService]
   

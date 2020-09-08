@@ -18,8 +18,7 @@ export class SingUpOrSingInComponent implements OnInit {
   showPopup: boolean = true;
   showBox: boolean = false;
   hideBox: boolean = false;
-  check: string = 'ghbytredfhuytrff';
-  commonUrl: string = 'http://192.168.0.110:4242/api/moglix';
+  
   constructor(
     public _singUpOrSingInService: SingUpOrSingInService,
     private _router: Router,
@@ -40,11 +39,13 @@ export class SingUpOrSingInComponent implements OnInit {
   }
   logIn() {
     this._singUpOrSingInService
-      .postUserDetails(this.commonUrl + '/login', this.loginForm.value)
+      .postUserDetails(this._commonService.commonUrl + '/login', this.loginForm.value)
       .subscribe(
         (res) => {
           if (res['status']) {
             this.setAndUpdateToken(res);
+            this._dataService.get(this._commonService.commonUrl +'/cart/get').subscribe((res)=>{
+            this._commonService.getNumberofProductsAddedToCart(res['cart']['items'])})
           } else {
             this._commonService.showErrorToast('Something went wrong', 'Error');
           }
@@ -53,6 +54,8 @@ export class SingUpOrSingInComponent implements OnInit {
           this._commonService.showErrorToast(err.error.error, 'Error');
         }
       );
+
+      
 
     console.log(this.loginForm.value);
   }
@@ -67,12 +70,25 @@ export class SingUpOrSingInComponent implements OnInit {
 
   singUp() {
     this._singUpOrSingInService
-      .postUserDetails(this.commonUrl + '/sign-up', this.singUpForm.value)
+      .postUserDetails(this._commonService.commonUrl + '/sign-up', this.singUpForm.value)
       .subscribe((res) => {
-        this.singUpDataRecieved = res;
-        this.setAndUpdateToken(res);
-      });
+      console.log(res);
+        if (res['status']) {
+            this.setAndUpdateToken(res);
+            this._commonService.showSuccessToast('Successfully LoggedIn','Done')
+            this._commonService.cart= res['data']['cart']['items']
+            localStorage.setItem('updatedCart',JSON.stringify(res['data']['cart']['items']))
+            this._commonService.updateMyCart()
+          } else {
+            this._commonService.showErrorToast('Something went wrong', 'Error');
+          }
+      },
+      (err) => {
+          this._commonService.showErrorToast('Enter your credentials correctly', 'Error');
+        }
+      );
   }
+  //err.error.error
   showSingUpForm() {
     this.showBox = true;
     this.hideBox = true;

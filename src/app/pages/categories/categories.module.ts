@@ -7,6 +7,7 @@ import { FooterModule } from '../../shared/components/footer/footer.module';
 import { Routes, RouterModule } from '@angular/router';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { SubCategoriesService } from './sub-categories/sub-categories.service';
+import { LoaderModule } from '../loader/loader.module';
 
 
 const routes:Routes =[
@@ -37,7 +38,7 @@ const routes:Routes =[
     HeaderMOdule,
     FooterModule,
     RouterModule.forChild(routes),
-
+    LoaderModule
   ],
   exports:[CategoriesComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

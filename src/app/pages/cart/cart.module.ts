@@ -5,6 +5,7 @@ import { HeaderMOdule } from '../../shared/components/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { LoaderModule } from '../loader/loader.module';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     CommonModule,
     HeaderMOdule,
-    FooterModule
+    FooterModule,
+    LoaderModule
   ]
 })
 export class CartModule { }

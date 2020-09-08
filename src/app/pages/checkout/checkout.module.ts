@@ -5,6 +5,7 @@ import { HeaderMOdule } from '../../shared/components/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SingUpOrSingInModule } from '../sing-up-or-sing-in/sing-up-or-sing-in.module';
+import { LoaderModule } from '../loader/loader.module';
 
 
 
@@ -15,7 +16,8 @@ import { SingUpOrSingInModule } from '../sing-up-or-sing-in/sing-up-or-sing-in.m
     CommonModule,
     HeaderMOdule,
     FooterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoaderModule
   ],
   exports:[CheckoutComponent]
 })

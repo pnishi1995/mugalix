@@ -8,6 +8,7 @@ import { CarouselHolderComponent } from '../../shared/components/carousel/carous
 import { HomeService } from './home.service';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { LoaderModule } from '../loader/loader.module';
 
 // import { ByeartTableModule } from '@byheart/table';
 
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
     FooterModule,
     CarouselModule,
     RouterModule,
+    LoaderModule
   ],
   exports: [HomeComponent],
   providers: [HomeService],

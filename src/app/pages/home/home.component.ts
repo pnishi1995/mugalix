@@ -126,7 +126,6 @@ config: any = {
 
   goToSlide(index) {
     this.homeCrowsel.to('' + index);
-    console.log(this.homeCrowsel);
   }
 
   activeSlides: SlidesOutputData;
