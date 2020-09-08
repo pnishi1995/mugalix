@@ -5,19 +5,22 @@ import { HeaderMOdule } from '../../shared/components/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { LoaderModule } from '../loader/loader.module';
 
-
+const routes = [
+  {
+    path: '',
+    component: CartComponent,
+  },
+];
 
 @NgModule({
   declarations: [CartComponent],
   imports: [
-    RouterModule,
     SharedModule,
     CommonModule,
     HeaderMOdule,
+    RouterModule.forChild(routes),
     FooterModule,
-    LoaderModule
-  ]
+  ],
 })
-export class CartModule { }
+export class CartModule {}

@@ -8,9 +8,13 @@ import { CarouselHolderComponent } from '../../shared/components/carousel/carous
 import { HomeService } from './home.service';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { LoaderModule } from '../loader/loader.module';
 
-// import { ByeartTableModule } from '@byheart/table';
+const routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+];
 
 @NgModule({
   declarations: [HomeComponent, CarouselHolderComponent],
@@ -21,8 +25,7 @@ import { LoaderModule } from '../loader/loader.module';
     CommonModule,
     FooterModule,
     CarouselModule,
-    RouterModule,
-    LoaderModule
+    RouterModule.forChild(routes),
   ],
   exports: [HomeComponent],
   providers: [HomeService],

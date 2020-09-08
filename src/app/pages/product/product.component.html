@@ -1,6 +1,4 @@
-
 <div class="body">
-<app-loader></app-loader>
     <div class="page-path">
         <span>Home</span>
         <span> > categories</span>
@@ -8,7 +6,7 @@
         <span> > Product</span>
     </div>
     <div class="row product-container">
-        
+
         <div class="product-Image">
             <img src="{{productDetail?.image_url}}" alt="">
         </div>
@@ -16,46 +14,49 @@
         <div class="product-detail row">
 
             <div class="price-and-rating">
-                    <div>PRODUCT NAME :{{productDetail?.name}}  </div>
-                    <div>PRODUCT BRAND: {{productDetail?.brand}}</div>
-                    <span>IN STOCK: {{productDetail?.quantity}}</span>
-                    <div>
-                        <span>Price:{{productDetail?.price}}</span> 
-                    </div>    
-                    <div>
-                        Quantity : 
-                        <button class="quantity" 
-                        (click)="decreaseQuantityOfItemForCart()" >-</button>
-                        <span class="QuantityOfItemNeeded" id="QuantityOfItemNeeded">
-                            {{this.addOneMoreItem}}
-                        </span>
-                        <button class="quantity" 
-                        (click)="increaseQuantityOfItemForCart()" >+</button>
-                    </div>
-                        
-                        
-                    <div>
-                            <span><button (click)="addToCart()" >ADD TO CART</button></span>
-                            <span><button>BUY NOW</button></span>
-                    </div>
-                    
+                <div>PRODUCT NAME :{{productDetail?.name}} </div>
+                <div>PRODUCT BRAND: {{productDetail?.brand}}</div>
+                <span>IN STOCK: {{productDetail?.quantity}}</span>
+                <div>
+                    <span>Price:{{productDetail?.price}}</span>
+                </div>
+                <div>
+                    Quantity :
+                    <button class="quantity" (click)="decreaseQuantityOfItemForCart()">-</button>
+                    <span class="QuantityOfItemNeeded" id="QuantityOfItemNeeded">
+                        {{this.addOneMoreItem}}
+                    </span>
+                    <button class="quantity" (click)="increaseQuantityOfItemForCart()">+</button>
+                </div>
+
+
+                <div>
+                    <span><button (click)="addToCart()">ADD TO CART</button></span>
+                    <span><button>BUY NOW</button></span>
+                </div>
+
             </div>
             <div class="check-delivery-and-others">
                 <label for="pincode"> Check avalibility in your area : </label>
                 <input type="text" placeholder="type your pin" name="pincode" class="pincode" id="pincode">
                 <span>Delivery in 4-7 days</span>
-                </div>
+            </div>
         </div>
     </div>
     <div class="description-of-product">
         <h5>PRODUCT INFORMATION</h5>
         <p>
-            Browse through the extensive list of Glucometers at Moglix. Shop online for other Dr. Morepen Glucometers available at Moglix in the lowest price range.
+            Browse through the extensive list of Glucometers at Moglix. Shop online for other Dr. Morepen Glucometers
+            available at Moglix in the lowest price range.
         </p>
         <p>
-            If you are looking for a reliable and accurate glucometer from a trusted brand then go for Dr. Morepen Glucose monitor. This glucometer is undoubtedly the best-suited product to your requirements and is easy to use. By using this device you can easily keep a check on the blood sugar level of the body on a daily basis. It requires only 5 seconds for the tests. Based on an advanced biosensor technology this glucometer is an example of precision. Furthermore, its substantial display provides a better view of the results on top of it its ability to recall 300 outcomes surely makes it a lucrative deal.
+            If you are looking for a reliable and accurate glucometer from a trusted brand then go for Dr. Morepen
+            Glucose monitor. This glucometer is undoubtedly the best-suited product to your requirements and is easy to
+            use. By using this device you can easily keep a check on the blood sugar level of the body on a daily basis.
+            It requires only 5 seconds for the tests. Based on an advanced biosensor technology this glucometer is an
+            example of precision. Furthermore, its substantial display provides a better view of the results on top of
+            it its ability to recall 300 outcomes surely makes it a lucrative deal.
         </p>
     </div>
 
 </div>
-

@@ -1,0 +1,13 @@
+.loader {
+  width: 100%;
+  height: 1000px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #1d21246e;
+  z-index: 999;
+  &.remove {
+    opacity: 0;
+    display: none;
+  }
+}

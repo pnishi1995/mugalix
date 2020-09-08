@@ -6,7 +6,6 @@ import { FooterModule } from '../../../shared/components/footer/footer.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './../../../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { LoaderModule } from '../../loader/loader.module';
 
 const route: Routes = [
   {
@@ -25,7 +24,6 @@ const route: Routes = [
     HeaderMOdule,
     FooterModule,
     RouterModule.forChild(route),
-    LoaderModule
   ],
 })
 export class SubCategoriesModule {}

@@ -6,11 +6,13 @@ import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AuthGuard } from './shared/services/auth.guard.service';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: 'home',

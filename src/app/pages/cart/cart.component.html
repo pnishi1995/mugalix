@@ -1,4 +1,3 @@
-<app-loader></app-loader>
 <div class="body">
     <div class="row container ">
         <div class="cart-items col-sm-8 ">
@@ -17,7 +16,7 @@
                     <p>Price :{{item.price}}</p>
                 </div>
                 <div class="add-remove-quantity">
-                    <span class="removeOrAdd"  (click)="udpateCartItemQuantity(i,'sub')">-</span>
+                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'sub')">-</span>
                     <span class="removeOrAdd">{{item.quantity}}</span>
                     <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
                     <div (click)="removeItem(i)"> Remove Item</div>
@@ -25,7 +24,7 @@
                 <div class="price-of-item">
                     <div class="amount">Amount :Rs {{item.price}}</div>
                     <div class="discount">
-                    Quantity you selected : {{item.quantity}}
+                        Quantity you selected : {{item.quantity}}
                     </div>
                 </div>
             </div>
@@ -52,11 +51,11 @@
                 <span>
                     Total Amount
                 </span>
-                <span  >
+                <span>
                     Rs : {{totalPrice}} /-
                 </span>
             </div>
-            
+
             <div class="amount-payable">
                 <span>
                     Amount Payable

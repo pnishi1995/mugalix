@@ -18,14 +18,15 @@ import { SingUpOrSingInModule } from './pages/sing-up-or-sing-in/sing-up-or-sing
 import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './shared/services/interceptor.service';
-import { LoaderModule } from './pages/loader/loader.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-  SingUpOrSingInModule,
+    SingUpOrSingInModule,
     CheckoutModule,
     ProductModule,
+    SharedModule,
     CartModule,
     SubCategoriesModule,
     FooterModule,
@@ -42,7 +43,6 @@ import { LoaderModule } from './pages/loader/loader.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    LoaderModule
   ],
   providers: [
     CommonService,

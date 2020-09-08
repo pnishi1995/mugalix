@@ -2,6 +2,8 @@ import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { HomeService } from './home.service';
 import { newArray } from '@angular/compiler/src/util';
+import { Observable, forkJoin } from 'rxjs';
+import { CommonService } from '../../shared/services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +11,17 @@ import { newArray } from '@angular/compiler/src/util';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-config: any = {
-  api: 'https://jsonplaceholder.typicode.com',
-  tableConfig: {
-    limit: 5,
-  },
-  styleConfig: {
-    theme: {
-      background: '#3e3c89',
+  config: any = {
+    api: 'https://jsonplaceholder.typicode.com',
+    tableConfig: {
+      limit: 5,
     },
-  },
-};
+    styleConfig: {
+      theme: {
+        background: '#3e3c89',
+      },
+    },
+  };
   @ViewChild('homeCrowsel', { static: true }) homeCrowsel;
   moglixHomePageData: any;
   categories: Array<any>;
@@ -27,8 +29,8 @@ config: any = {
   flayersImages: Array<any>;
   dataForActiveCarousel = this.flayersImages;
   activeSlidesCaption: Array<Boolean>;
-  categorieslistData:any;
-  categoriesRawlist:any;
+  categorieslistData: any;
+  categoriesRawlist: any;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -91,38 +93,51 @@ config: any = {
     ],
   };
 
-  constructor(private _homeService: HomeService) {
+  constructor(
+    private _homeService: HomeService,
+    private _commonService: CommonService
+  ) {
     this.activeSlidesCaption = newArray(5).fill(false);
   }
 
   ngOnInit() {
-    const data = {
-      category_list: [
-        '5f279f68e51fa82349684923',
-        '5f279f6ce51fa82349684924',
-        '5f279f7fe51fa82349684925',
-        '5f279f8de51fa82349684926',
-        '5f279f9fe51fa82349684927',
-        '5f279fa4e51fa82349684928',
-        '5f297538c25c696b14ef3019',
-        '5f297373c25c696b14ef3015',
-      ],
-    };
-    
-    this._homeService.getCategoryProducts(data).subscribe((res) => {
+    this.getHomePageData();
+  }
+
+  getHomePageData() {
+    this._commonService.showLoader();
+    const combined = forkJoin(
+      this._homeService.getCategorylist(),
+      this._homeService.getCategoryProducts()
+    );
+
+    combined.subscribe((latestValues) => {
+      const [res, data] = latestValues;
+      this.categoriesRawlist = res['data'];
+
+      this.moglixHomePageData = data;
+      this.categories = this.moglixHomePageData.data.category_data;
+      this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
+      this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
+      this._commonService.hideLoader();
+    });
+  }
+
+  getCategoryProducts() {
+    this._homeService.getCategorylist().subscribe((res) => {
+      this.categorieslistData = res;
+      this.categoriesRawlist = this.categorieslistData.data;
+    });
+  }
+
+  getCategoryData() {
+    this._homeService.getCategoryProducts().subscribe((res) => {
       this.moglixHomePageData = res;
       this.categories = this.moglixHomePageData.data.category_data;
       this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
       this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
     });
-
-    this._homeService.getCategorylist(data).subscribe((res)=>{
-      this.categorieslistData = res;
-      this.categoriesRawlist = this.categorieslistData.data  ; 
-    })
   }
-  
-
 
   goToSlide(index) {
     this.homeCrowsel.to('' + index);
@@ -131,7 +146,7 @@ config: any = {
   activeSlides: SlidesOutputData;
   getData(dataForActiveCarousel: SlidesOutputData) {
     this.activeSlides = dataForActiveCarousel;
-    
+
     setTimeout(() => {
       this.activeSlidesCaption = newArray(5).fill(false);
       this.activeSlidesCaption[dataForActiveCarousel.startPosition] = true;

@@ -1,5 +1,4 @@
 <div class="body container-fluid">
-<app-loader></app-loader>
     <div class="row">
         <div class="filter-box right-box col-sm-2">
             <div>
@@ -8,19 +7,19 @@
             <!-- <div class="filters-price">
                 <h5>Brand</h5>
                 <div *ngFor="let brand of brands"> -->
-                    <!-- <input type="radio" name="filter" [attr.id]="brand" [value]="brand" [(ngModel)]="selectedBrand"
+            <!-- <input type="radio" name="filter" [attr.id]="brand" [value]="brand" [(ngModel)]="selectedBrand"
                         (change)="updateProductList()" /> -->
-                    <!-- <input type="radio" name="filter" [attr.id]="brand" [value]="brand" [(ngModel)]="selectedBrand" />
+            <!-- <input type="radio" name="filter" [attr.id]="brand" [value]="brand" [(ngModel)]="selectedBrand" />
                     <label [attr.for]="brand">{{brand}}</label>
                 </div>
 
             </div> -->
-            <div class="filters-price"  >
-            <div *ngFor="let brand of brands">
-            <input type="checkbox" [attr.name]="brand" [attr.id]="brand" [value]="brand" 
-            (change)="updateProductList($event,input?.value)" #input>
-            <label [attr.for]="brand">{{brand}}</label>
-            </div>
+            <div class="filters-price">
+                <div *ngFor="let brand of brands">
+                    <input type="checkbox" [attr.name]="brand" [attr.id]="brand" [value]="brand"
+                        (change)="updateProductList($event,input?.value)" #input>
+                    <label [attr.for]="brand">{{brand}}</label>
+                </div>
             </div>
         </div>
         <div class="col-sm-10">

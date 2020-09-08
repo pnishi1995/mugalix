@@ -9,15 +9,27 @@ export class CommonService {
   cart: Array<any>;
   user;
   token;
-  commonUrl = 'http://192.168.0.110:4242/api/moglix'
+  commonUrl = 'http://192.168.0.110:4242/api/moglix';
+  showloader: boolean;
 
   constructor(private toastr: ToastrService, private _router: Router) {
     this.updateMyCart();
     this.updateToken();
   }
+
+  showLoader() {
+    this.showloader = false;
+  }
+
+  hideLoader() {
+    setTimeout(() => {
+      this.showloader = true;
+    }, 300);
+  }
+
   getNumberofProductsAddedToCart(loginCartUpdate) {
-    this.cart = loginCartUpdate || [] ;//value I got during login 
-    localStorage.setItem('updatedCart',JSON.stringify(this.cart))//saved in local storage
+    this.cart = loginCartUpdate || []; //value I got during login
+    localStorage.setItem('updatedCart', JSON.stringify(this.cart)); //saved in local storage
     console.log(this.cart);
   }
 
@@ -40,7 +52,7 @@ export class CommonService {
   showErrorToast(data, msg) {
     this.toastr.error(data, msg);
   }
-  updateMyCart(){
-  this.cart = JSON.parse(localStorage.getItem('updatedCart'));
+  updateMyCart() {
+    this.cart = JSON.parse(localStorage.getItem('updatedCart'));
   }
 }

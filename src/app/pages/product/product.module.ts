@@ -6,10 +6,13 @@ import { FooterModule } from '../../shared/components/footer/footer.module';
 import { ProductService } from './product.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { LoaderModule } from '../loader/loader.module';
 
-
-
+const routes = [
+  {
+    path: '',
+    component: ProductComponent,
+  },
+];
 
 @NgModule({
   declarations: [ProductComponent],
@@ -17,11 +20,10 @@ import { LoaderModule } from '../loader/loader.module';
     HeaderMOdule,
     FooterModule,
     CommonModule,
+    RouterModule.forChild(routes),
     SharedModule,
     RouterModule,
-    LoaderModule
   ],
-  providers:[ProductService]
-  
+  providers: [ProductService],
 })
-export class ProductModule { }
+export class ProductModule {}
