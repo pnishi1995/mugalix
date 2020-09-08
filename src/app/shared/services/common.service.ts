@@ -18,12 +18,12 @@ export class CommonService {
   }
 
   showLoader() {
-    this.showloader = false;
+    this.showloader = true;
   }
 
   hideLoader() {
     setTimeout(() => {
-      this.showloader = true;
+      this.showloader = false;
     }, 300);
   }
 
