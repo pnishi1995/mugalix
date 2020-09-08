@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { CommonService } from 'src/app/shared/services/common.service';
 import { DataService } from 'src/app/shared/services/data.service';
-=======
-import { CommonService } from './../../shared/services/common.service';
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +8,6 @@ import { CommonService } from './../../shared/services/common.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-<<<<<<< HEAD
   updatedCartValue;
   totalPrice;
   constructor(public _commonService:CommonService,public _dataService:DataService) {}
@@ -48,44 +43,4 @@ export class CartComponent implements OnInit {
     })
   }
   
-=======
-  itemsInCart: Array<any>;
-  arrayOftotalforEachproduct = [];
-  totalamount;
-  constructor(public _commonService: CommonService) {}
-
-  ngOnInit(): void {
-    this.ItemAddedToCart();
-  }
-
-  ItemAddedToCart() {
-    this.itemsInCart = this._commonService.cart;
-    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
-  }
-
-  udpateCartItemQuantity(index: number, type: string) {
-    if (
-      type === 'add' &&
-      this.itemsInCart[index].numberOfItemNeededByUser !==
-        this.itemsInCart[index].quantity
-    ) {
-      this.itemsInCart[index].numberOfItemNeededByUser += 1;
-      this.itemsInCart[index].productTotal += this.itemsInCart[index].price;
-      this.totalamount += this.itemsInCart[index].price;
-    } else if (
-      type === 'sub' &&
-      this.itemsInCart[index].numberOfItemNeededByUser !== 1
-    ) {
-      this.itemsInCart[index].numberOfItemNeededByUser -= 1;
-      this.itemsInCart[index].productTotal -= this.itemsInCart[index].price;
-      this.totalamount -= this.itemsInCart[index].price;
-    }
-    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
-  }
-
-  removeItem(i) {
-    this.itemsInCart.splice(i, 1);
-    localStorage.setItem('addedProduct', JSON.stringify(this.itemsInCart));
-  }
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
 }

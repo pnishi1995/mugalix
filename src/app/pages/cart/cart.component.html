@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <app-loader></app-loader>
-=======
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
 <div class="body">
     <div class="row container ">
         <div class="cart-items col-sm-8 ">
@@ -20,27 +17,15 @@
                     <p>Price :{{item.price}}</p>
                 </div>
                 <div class="add-remove-quantity">
-<<<<<<< HEAD
                     <span class="removeOrAdd"  (click)="udpateCartItemQuantity(i,'sub')">-</span>
                     <span class="removeOrAdd">{{item.quantity}}</span>
-=======
-                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'sub')">-</span>
-                    <span class="removeOrAdd">{{item.numberOfItemNeededByUser}}</span>
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
                     <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
                     <div (click)="removeItem(i)"> Remove Item</div>
                 </div>
                 <div class="price-of-item">
                     <div class="amount">Amount :Rs {{item.price}}</div>
                     <div class="discount">
-<<<<<<< HEAD
                     Quantity you selected : {{item.quantity}}
-=======
-                        Quantity you selected : {{item.numberOfItemNeededByUser}}
-                    </div>
-                    <div class="price-detail">
-                        Product Total : Rs {{ item.price*item.numberOfItemNeededByUser }}
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
                     </div>
                 </div>
             </div>
@@ -67,13 +52,8 @@
                 <span>
                     Total Amount
                 </span>
-<<<<<<< HEAD
                 <span  >
                     Rs : {{totalPrice}} /-
-=======
-                <span>
-                    Rs : {{this.totalamount}} /-
->>>>>>> 36accf89c5d80043a69da668511ea3ab3b32d258
                 </span>
             </div>
             
