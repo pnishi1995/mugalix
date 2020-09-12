@@ -38,11 +38,28 @@
                         <p class="item-detail brand"> {{item.brand}}</p>
                         <p class="item-detail name">{{item.name}}</p>
                         <p class="item-detail subcategory">{{item.quantity}} items </p>
-                        <p class="item-detail subcategory">RS: {{item.price}} </p>
+                        <p class="item-detail subcategory">Rs: {{item.price}} </p>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
+    <div class="row" >
+      More Items :
+      <div *ngFor="let item of pageArray; let i = index;" >
+      <ng-container class="pagination">
+      <button *ngIf="i < currentPage +1 && i > currentPage -3" 
+        (click)="showClickedPageNo(i)" [disabled]="pageArray[i]" >
+      <ng-container  >
+        {{i+1}}
+      </ng-container>
+      </button>
+  
+      </ng-container>
+  
+      </div>
+    </div>
+
+<!-- i < current+2 && i < current +2 -->
 </div>

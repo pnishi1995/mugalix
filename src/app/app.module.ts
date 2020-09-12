@@ -19,7 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './shared/services/interceptor.service';
 import { SharedModule } from './shared/shared.module';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -43,6 +43,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     CommonService,

@@ -6,6 +6,8 @@ import { FooterModule } from '../../../shared/components/footer/footer.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './../../../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 const route: Routes = [
   {
@@ -24,6 +26,7 @@ const route: Routes = [
     HeaderMOdule,
     FooterModule,
     RouterModule.forChild(route),
+    NgxPaginationModule
   ],
 })
 export class SubCategoriesModule {}

@@ -34,12 +34,14 @@ export class CartComponent implements OnInit {
   }
 
   cartRecentUpdate(){
+    this._commonService.showLoader();
     this._dataService.post(this._commonService.commonUrl +'/cart/update',
     {items:this._commonService.cart}).subscribe((res)=>{
     this.totalPrice = res['cart']['totalPrice'];  
     this.updatedCartValue = res['cart']['items'];
     localStorage.setItem('updatedCart',JSON.stringify(res['cart']['items']));
     this._commonService.updateMyCart();
+    this._commonService.hideLoader();
     })
   }
   

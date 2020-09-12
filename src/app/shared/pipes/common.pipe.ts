@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'commonpipe',
@@ -34,4 +34,13 @@ export class ConvertnamePipe implements PipeTransform {
     }
     return val;
   }
+}
+
+@Pipe({
+  name: ' paginate'
+})
+export class PaginatePipe implements PipeTransform{
+transform(val: any,args:any){
+
+}
 }

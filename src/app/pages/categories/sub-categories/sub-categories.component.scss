@@ -23,10 +23,10 @@
       margin: 10px auto;
       display: block;
     }
-    .item:hover {
+    //.item:hover {
       //   width: 152px;
       //   padding: 10px;
-    }
+    //}
     .item-container {
       padding: 25px 0px;
       position: relative;
@@ -72,4 +72,9 @@
       margin: 0px;
     }
   }
+  .pagination{
+  width: 50px;
+  
+  }
+  
 }

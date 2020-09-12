@@ -28,8 +28,10 @@ export class ProductComponent implements OnInit {
   }
 
   getProduct(){
+    this._commonService.showLoader();
     this._productService.getProduct(this._commonService.commonUrl+'/product/id/'+ this._routes.params['value'].productId).subscribe((res)=>{
-      this.productDetail= res['data']
+      this.productDetail= res['data'];
+      this._commonService.hideLoader();
     })
 
   }
@@ -47,6 +49,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
+    this._commonService.showLoader();
     const product = {
       productId:this.productDetail['id'],
       name:this.productDetail['name'],
@@ -60,6 +63,7 @@ export class ProductComponent implements OnInit {
     {items:this._commonService.cart}).subscribe((res)=>{
     localStorage.setItem('updatedCart',JSON.stringify(res['cart']['items']));
     this._commonService.updateMyCart();
+    this._commonService.hideLoader();
     })
     
   }
